@@ -1,18 +1,14 @@
-package com.lungunaiman.donesti;
+package com.lungunaiman.donesti.Offer;
 
+import com.lungunaiman.donesti.Generic.GenericEntity;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Data
 @Entity
-public class Offer {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+public class Offer extends GenericEntity {
 
     private String title;
-
     private String description;
 }
