@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="2-a" author="adrian.lungu">
+        <sql>
+            CREATE TABLE `donesti`.`offer` (
+            `ID` INT NOT NULL AUTO_INCREMENT,
+            `TITLE` VARCHAR(90) NULL,
+            `DESCRIPTION` TEXT NULL,
+            PRIMARY KEY (`ID`));
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="2-b" author="adrian.lungu">
+        <sql>
+            CREATE TABLE `donesti`.`proposal` (
+            `ID` INT NOT NULL AUTO_INCREMENT,
+            `ORGANIZATION_ID` INT NULL,
+            `PENDING` TINYINT NULL,
+            `ACCEPTED` TINYINT NULL,
+            PRIMARY KEY (`ID`));
+
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
