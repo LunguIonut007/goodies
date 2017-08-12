@@ -14,12 +14,7 @@ public class User {
     @Column(name = "ID")
     private int id;
 
-    @Column(name= "NAME")
     private String name;
-
-    @Column(name = "PASSWORD")
     private String password;
-
-    @Column(name = "EMAIL")
     private String email;
 }
