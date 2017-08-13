@@ -27,10 +27,12 @@ public class RegisterController {
 
         if(register.getDonor() != null) {
             register.getDonor().setUser(user);
+            register.getUser().setEntityType(EntityType.DONOR);
             return new Response(donorRepository.save(register.getDonor()));
         }
 
         register.getOrganization().setUser(user);
+        register.getUser().setEntityType(EntityType.ORGANIZATION_ADMIN);
         return new Response(organizationRepository.save(register.getOrganization()));
     }
 }

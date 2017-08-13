@@ -18,4 +18,11 @@
         </sql>
     </changeSet>
 
+    <changeSet id="4-c" author="adrian.lungu">
+        <sql>
+            ALTER TABLE `donesti`.`users`
+            ADD COLUMN `ENTITY_TYPE` VARCHAR(45) NULL AFTER `PASSWORD`;
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>

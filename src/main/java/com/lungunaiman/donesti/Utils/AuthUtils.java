@@ -15,4 +15,5 @@ public class AuthUtils {
     public boolean isOfUser(int userId) {
         return getUser().getId() == userId;
     }
+
 }

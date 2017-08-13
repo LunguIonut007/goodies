@@ -17,4 +17,8 @@ public class User {
     private String name;
     private String password;
     private String email;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "ENTITY_TYPE")
+    private EntityType entityType;
 }
