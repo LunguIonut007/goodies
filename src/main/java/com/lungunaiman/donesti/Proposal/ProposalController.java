@@ -1,4 +1,4 @@
-package com.lungunaiman.donesti.Offer;
+package com.lungunaiman.donesti.Proposal;
 
 import com.lungunaiman.donesti.Generic.GenericController;
 import com.lungunaiman.donesti.Generic.GenericService;
@@ -7,20 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/offer")
-public class OfferController extends GenericController<Offer> {
+@RequestMapping("/proposal")
+public class ProposalController extends GenericController<Proposal> {
 
-    @Autowired private OfferService offerService;
+    @Autowired private ProposalService proposalService;
+
 
     @Override
-    public GenericService<Offer> getService() {
-        return offerService;
+    public GenericService<Proposal> getService() {
+        return proposalService;
     }
 
     @Override
     public int getOwnerUserId(Object entity) {
-        Offer offer = (Offer) entity;
+        Proposal proposal = (Proposal) entity;
 
-        return offer.getUser().getId();
+        return proposal.getUser().getId();
     }
 }

@@ -1,5 +1,6 @@
 package com.lungunaiman.donesti.Utils;
 
+import com.lungunaiman.donesti.Configuration.security.UserPrincipal;
 import com.lungunaiman.donesti.Users.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -8,12 +9,10 @@ import org.springframework.stereotype.Service;
 public class AuthUtils {
 
     public User getUser() {
-        return (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return ((UserPrincipal)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser();
     }
 
     public boolean isOfUser(int userId) {
-        if(getUser().getId() == userId) return true;
-
-        return false;
+        return getUser().getId() == userId;
     }
 }

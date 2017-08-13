@@ -6,4 +6,5 @@ import lombok.Data;
 public class OfferDto {
 
     private String title;
+    private String description;
 }
