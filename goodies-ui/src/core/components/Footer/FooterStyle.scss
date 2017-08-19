@@ -1,0 +1,155 @@
+.footer {
+    display: flex;
+    height: 40px; // padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: $DPrimaryBackground;
+    z-index: 10;
+    justify-content: space-between;
+    color: #939393 ;
+    ul.social {
+        text-align: center;
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+    ul.social li {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        line-height: 30px;
+        /* --- optional, it looks nice also with simple squares --- */
+        border-radius: 100%;
+        transition-duration: 0.7s;
+        margin-left: 10px;
+    }
+    /* --- hover effect : background color change --- */
+    ul.social li a {
+        display: block;
+        width: 100%;
+        height: 200%;
+        position: relative;
+        top: 0;
+        color: #33cc99;
+        transition: top 0.7s;
+    }
+    /* --- hover effect : shift up --- */
+    ul.social li:hover a {
+        top: -45px;
+        border-color: transparent;
+    }
+    ul.social li a .afterIcon {
+        position: absolute;
+        width: inherit;
+        height: 50%;
+        left: 0;
+        bottom: 0;
+        line-height: 60px;
+        text-align: center;
+        color: white
+    }
+}
+
+.footer[data-entityType="cause"] {
+    background: $CPrimaryBackground;
+    ul.social li {
+        background: $CDarkBackground;
+        a {
+            display: block;
+            width: 100%;
+            height: 200%;
+            position: relative;
+            top: 0;
+            color: $CPrimaryColor;
+            transition: top 0.7s;
+        }
+    }
+    ul.social li:hover a {
+        top: -45px;
+        border-color: transparent;
+    }
+    ul.social {
+        .facebook li:hover {
+            background: #3b5998;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .github li:hover {
+            background: #24292e;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .twitter li:hover {
+            background: #00b6f1;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .youtube li:hover {
+            background: #CD201F;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .tumblr li:hover {
+            background: #35465c;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .google-plus li:hover {
+            background: #DB4437;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+    }
+     .poweredBy{
+        padding:10px;
+    }
+}
+
+.footer[data-entityType="donator"] {
+    background: $DPrimaryBackground;
+    ul.social li {
+        background: $DDarkBackground;
+        a {
+            display: block;
+            width: 100%;
+            height: 200%;
+            position: relative;
+            top: 0;
+            color: $DPrimaryColor;
+            transition: top 0.7s;
+        }
+    }
+    ul.social li:hover a {
+        top: -45px;
+        border-color: transparent;
+    }
+    ul.social {
+        .facebook li:hover {
+            background: #3b5998;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .github li:hover {
+            background: #24292e;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .twitter li:hover {
+            background: #00b6f1;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .youtube li:hover {
+            background: #CD201F;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .tumblr li:hover {
+            background: #35465c;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .google-plus li:hover {
+            background: #DB4437;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .poweredBy{
+        padding:10px;
+    }
+
+     
+  
+}

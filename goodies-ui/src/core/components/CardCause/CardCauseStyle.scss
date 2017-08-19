@@ -1,0 +1,47 @@
+.card-container-cause{
+    position:relative;
+    background: $CPrimaryBackground;
+    width:100%;
+    padding:10px;
+    margin-bottom: 80px;
+    height:30vh;
+    //border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   // position: relative;
+   display: flex;
+    .card-avatar{
+        margin-top:-100px;
+        //position: absolute;
+    }
+   .text{
+        padding: 10px;
+    .name{
+        font-size: 40px;
+        font-weight: bold;
+        padding-left: 20px;
+    }
+    .motto{
+        padding:20px;
+        padding-left: 40px;
+        font-size: 20px;
+        font-weight: 200;
+        font-style: italic;
+    }
+   } 
+   .description{
+       padding:10px;
+       padding-left: 15%;
+       padding-top: 0;
+       height: 40%;
+       overflow: hidden;
+       text-overflow: ellipsis;
+   }
+   .buttons{
+       position: absolute;
+       bottom:0;
+       right:0;
+   }
+}

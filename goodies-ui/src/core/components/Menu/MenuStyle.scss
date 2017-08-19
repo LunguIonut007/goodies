@@ -1,0 +1,102 @@
+.ui.vertical.menu {
+    width: 100%;
+    border-radius: 0;
+    background: none;
+    border: none; // padding-left:20px;
+    // padding-right: 20px;
+    box-shadow: none;
+    a.item {
+        font-size: 18px;
+        color: white;
+        letter-spacing: 3px;
+        font-weight: bold;
+        border: none;
+        background: none;
+        border-radius: none;
+            // animation's transition
+            -webkit-transition: 0.2s ease-in-out;
+            -moz-transition: 0.2s ease-in-out;
+            -o-transition: 0.2s ease-in-out;
+            transition: 0.2s ease-in-out;
+    }
+    a.item::before {
+        display: none;
+    }
+    a.active.item {
+        background: $DNavigationSelected;
+    }
+     a.active.item:hover {
+        background: $DNavigationSelected;
+        color: $DPrimaryColor;
+    }
+
+    a.item:hover {
+        background: $DNavigationSelected;
+        color: $DPrimaryColor;
+        border-radius: 0;
+    }
+
+
+    a.active.item::after {
+        background: $DNavigationSelected;
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 10px;
+        right: 0;
+        top: 0;
+        margin-right: -10px;
+    }
+}
+
+.ui.vertical.menu::before {
+    position: absolute;
+    content: '';
+    background: black;
+    height: 2px;
+}
+
+.ui.vertical.menu>.active.item:first-child {
+    border-radius: 0;
+}
+
+.ui.vertical.menu[data-entityType="cause"] {
+    a.active.item {
+        background: $CNavigationSelected;
+    }
+     a.active.item:hover {
+        background: $CNavigationSelected;
+        color: $CPrimaryColor;
+    }
+
+    a.item:hover {
+        background: $CNavigationSelected;
+        color: $CPrimaryColor;
+    }
+
+
+    a.active.item::after {
+        background: $CNavigationSelected;
+    }
+}
+
+
+.ui.vertical.menu[data-entityType="donator"] {
+    a.active.item {
+        background: $DNavigationSelected;
+    }
+     a.active.item:hover {
+        background: $DNavigationSelected;
+        color: $DPrimaryColor;
+    }
+
+    a.item:hover {
+        background: $DNavigationSelected;
+        color: $DPrimaryColor;
+    }
+
+
+    a.active.item::after {
+        background: $DNavigationSelected;
+    }
+}

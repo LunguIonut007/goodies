@@ -1,0 +1,444 @@
+
+// The hero image
+.hero {
+    &-image {
+        align-content: center;
+        align-items: center; // The image used 
+        background-image: url('../images/support_0.jpg'); // Position and center the image to scale nicely on all screens 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex; // Set a specific height 
+        height: 100vh;
+        justify-content: center;
+        position: relative;
+        &::before {
+            background-color: #000;
+            content: '';
+            height: 100%;
+            left: 0;
+            opacity: .7;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+    &-container {
+        align-content: center;
+        align-items: center;
+        display: flex;
+        height: 90%;
+        justify-content: space-between;
+        width: 80%;
+        z-index: 2;
+        .hero-donor {
+            align-content: center;
+            align-items: center;
+            color: white;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            width: 50%;
+            .hero-donor-container {
+                align-items: center;
+                width: 80%;
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                h1 {
+                    font-size: 50px;
+                    font-weight: 800;
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+                p {
+                    line-height: 1.5;
+                    font-size: 20px
+                }
+            }
+        }
+        .hero-cause {
+            width: 50%;
+            height: 100%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            .hero-cause-container {
+                width: 80%;
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                h1 {
+                    font-size: 50px;
+                    font-weight: 800;
+                    margin-bottom: 20px;
+                }
+                p {
+                    line-height: 1.5;
+                    font-size: 20px
+                }
+            }
+        }
+        .section {
+            // animation's transition
+            -webkit-transition: 0.8s ease-in-out;
+            -moz-transition: 0.8s ease-in-out;
+            -o-transition: 0.8s ease-in-out;
+            transition: 0.8s ease-in-out;
+
+            position: absolute;
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+
+            &-in {
+                -webkit-transform: translate(100%, 0);
+                -moz-transform: translate(100%, 0);
+                -o-transform: translate(100%, 0);
+                -ms-transform: translate(100%, 0);
+                transform: translate(100%, 0);
+            }
+
+            .signInLogInContainer {
+                width: 90%;
+                height: 90%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+
+                .signInLogInPanel {
+                    // animation's transition
+                    -webkit-transition: 0.8s ease-in-out;
+                    -moz-transition: 0.8s ease-in-out;
+                    -o-transition: 0.8s ease-in-out;
+                    transition: 0.8s ease-in-out;
+
+                    width: 100%;
+                    height: 100%;
+                    background: $DPrimaryBackground;
+                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+                    h1 {
+                        background: $DPrimaryColor;
+                        color: #fff;
+                        font-size: 64px;
+                        font-family: 'Open Sans', sans-serif;
+                        font-weight: 500;
+                        padding: 20px;
+                        width: 100%;
+                        // animation's transition
+                        -webkit-transition: 0.8s ease-in-out;
+                        -moz-transition: 0.8s ease-in-out;
+                        -o-transition: 0.8s ease-in-out;
+                        transition: 0.8s ease-in-out;
+
+                        div {
+                            // animation's transition
+                            -webkit-transition: 0.8s ease-in-out;
+                            -moz-transition: 0.8s ease-in-out;
+                            -o-transition: 0.8s ease-in-out;
+                            transition: 0.8s ease-in-out;
+                            
+                            display: flex;
+                            justify-content: space-between;
+                            
+                            .cause {
+                                // animation's transition
+                                -webkit-transition: 0.8s ease-in-out;
+                                -moz-transition: 0.8s ease-in-out;
+                                -o-transition: 0.8s ease-in-out;
+                                transition: 0.8s ease-in-out;
+                                // initial style state
+                                opacity: 0;
+                                visibility: hidden;
+                            }
+                        }
+                    }
+
+                    display:flex;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .formContainer {
+                        // animation's transition
+                        -webkit-transition: 0.8s ease-in-out;
+                        -moz-transition: 0.8s ease-in-out;
+                        -o-transition: 0.8s ease-in-out;
+                        transition: 0.8s ease-in-out;
+                        
+                        .tabContainer {
+                            // animation's transition
+                            -webkit-transition: 0.8s ease-in-out;
+                            -moz-transition: 0.8s ease-in-out;
+                            -o-transition: 0.8s ease-in-out;
+                            transition: 0.8s ease-in-out;
+                        
+                            .navs {
+                                // animation's transition
+                                -webkit-transition: 0.8s ease-in-out;
+                                -moz-transition: 0.8s ease-in-out;
+                                -o-transition: 0.8s ease-in-out;
+                                transition: 0.8s ease-in-out;
+
+                                display: flex;
+                                justify-content: space-around;
+                                border-color: $DPrimaryColor;
+
+                                li {
+                                    width: 50%;
+                                    justify-content: center;
+                                    align-content: center;
+                                    align-items: center;
+                                    border-color: transparent;
+                                }
+                                a {
+                                    // animation's transition
+                                    -webkit-transition: 0.8s ease-in-out;
+                                    -moz-transition: 0.8s ease-in-out;
+                                    -o-transition: 0.8s ease-in-out;
+                                    transition: 0.8s ease-in-out;
+
+                                    border-radius: 0;
+                                    padding: 10px 20px 10px;
+                                    font-size: 20px;
+                                    text-align: center;
+                                    border-color: transparent;
+                                    color: grey;
+                                    outline: none !important;
+
+                                    &:hover,
+                                    &:focus {
+                                        // animation's transition
+                                        -webkit-transition: 0.8s ease-in-out;
+                                        -moz-transition: 0.8s ease-in-out;
+                                        -o-transition: 0.8s ease-in-out;
+                                        transition: 0.8s ease-in-out;
+
+                                        background: transparent;
+                                        color: white;
+                                        padding: 10px 20px 10px;
+                                        border-color: transparent;
+                                        color: $DPrimaryColor;
+                                    }
+                                }
+
+                                li.active>a,
+                                li.active>a:hover,
+                                li.active>a:focus {
+                                    // animation's transition
+                                    -webkit-transition: 0.8s ease-in-out;
+                                    -moz-transition: 0.8s ease-in-out;
+                                    -o-transition: 0.8s ease-in-out;
+                                    transition: 0.8s ease-in-out;
+
+                                    background: transparent;
+                                    padding: 10px 20px 10px;
+                                    color: white;
+                                    color: $DPrimaryColor;
+                                    border-color: transparent;
+                                }
+                            }
+                        }
+
+                        padding-top:30px;
+                        color: #fff;
+                        width:80%;
+                        
+                        .form {
+                            padding-top: 30px;
+
+                            .submitContainerButton {
+                                // animation's transition
+                                -webkit-transition: 0.8s ease-in-out;
+                                -moz-transition: 0.8s ease-in-out;
+                                -o-transition: 0.8s ease-in-out;
+                                transition: 0.8s ease-in-out;
+
+                                background: $DPrimaryColor;
+                                color: #fff;
+                                border-radius: 0;
+                                font-size: 20px;
+                                font-family: 'Open Sans', sans-serif
+                            }
+                        }
+                    }
+
+                    .donorToCause {
+                        // animation's transition
+                        -webkit-transition: 0.8s ease-in-out;
+                        -moz-transition: 0.8s ease-in-out;
+                        -o-transition: 0.8s ease-in-out;
+                        transition: 0.8s ease-in-out;
+                        // css triangle
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 200px 200px;
+                        border-color: transparent transparent $CPrimaryColor transparent;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        
+                        .changeButton {
+                            text-align: center;
+                            bottom: -110px;
+                            left: -90px;
+                            position: relative;
+                            width: 93px;
+                            height: 93px;
+                            margin: 0px;
+                            -ms-transform: rotate(-45deg);
+                            /* IE 9 */
+                            -webkit-transform: rotate(-45deg);
+                            /* Chrome, Safari, Opera */
+                            transform: rotate(-45deg);
+                            color: white;
+                            font-size: 30px;
+                            font-weight: 700;
+                            font-family: 'Josefin Slab', serif;
+                        }
+                    }
+                    .causeToDonor {
+                        // animation's transition
+                        -webkit-transition: 0.8s ease-in-out;
+                        -moz-transition: 0.8s ease-in-out;
+                        -o-transition: 0.8s ease-in-out;
+                        transition: 0.8s ease-in-out;
+                        //css triangle
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 200px 0 0 200px;
+                        border-color: transparent transparent transparent $DPrimaryColor;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        
+                        .changeButton {
+                            text-align: center;
+                            bottom: 100px;
+                            left: -160px;
+                            position: relative; // width: 93px;
+                            // height: 93px;
+                            margin: 0px;
+                            -ms-transform: rotate(45deg);
+                            /* IE 9 */
+                            -webkit-transform: rotate(45deg);
+                            /* Chrome, Safari, Opera */
+                            transform: rotate(45deg);
+                            color: white;
+                            font-size: 30px;
+                            font-weight: 700;
+                            font-family: 'Josefin Slab', serif;
+                        }
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    .messageCause {
+                        // animation's transition
+                        -webkit-transition: 0.8s ease-in-out;
+                        -moz-transition: 0.8s ease-in-out;
+                        -o-transition: 0.8s ease-in-out;
+                        transition: 0.8s ease-in-out;
+                        transform: translate(-90px);
+
+                        color: #fff;
+                        font-size: 30px;
+                        align-self: flex-center;
+                        margin-top: auto;
+                        text-align: center;
+                        margin-bottom: 90px;
+                        padding-right: 20px;
+                        padding-left: 110px;
+                        font-family: 'Josefin Slab', serif;
+                        font-weight: 800;
+                    }
+                    // style of the translated state
+                    &-in {
+                        background: $CPrimaryBackground;
+
+                        h1 {
+                            background: $CPrimaryColor;
+
+                            div {
+                                .donator {
+                                    opacity: 0;
+                                    visibility: hidden;
+                                    width: 0
+                                }
+
+                                .cause {
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+                        }
+                        
+                        .formContainer {
+                            .tabContainer {
+                                .navs {
+                                    border-color: $CPrimaryColor;
+                                    a {
+                                        &:hover,
+                                        &:focus {
+                                            color: $CPrimaryColor;
+                                        }
+                                    }
+
+                                    li.active>a,
+                                    li.active>a:hover,
+                                    li.active>a:focus {
+                                        color: $CPrimaryColor;
+                                    }
+                                }
+                            }
+
+                            .form {
+                                .submitContainerButton {
+                                    background: $CPrimaryColor;
+                                }
+                            }
+                        }
+
+                        .donorToCause {
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+
+                        .causeToDonor {
+                            width: 0;
+                            opacity: 1;
+                            visibility: visible;
+                        }
+
+                        .messageCause {
+                            // animation's transition
+                            -webkit-transition: 0.8s ease-in-out;
+                            -moz-transition: 0.8s ease-in-out;
+                            -o-transition: 0.8s ease-in-out;
+                            transition: 0.8s ease-in-out;
+                            transform: translate(40px);
+
+                            padding-left: 110px;
+                            padding-right: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

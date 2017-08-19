@@ -1,0 +1,35 @@
+.header-container{
+    background: $DPrimaryBackground;
+    z-index: 20;
+    height:60px;
+    width:100%;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    position:fixed;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    .logo{
+        font-size:40px;
+        height: 100%;
+        display: flex;
+        align-content: center;
+        align-items:center;
+        width:20%;
+        padding-left: 90px;;
+    }
+}
+    .header-utilities{
+        width:50%;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: center;
+        padding-right: 20px;
+        display: flex;
+    }
+.header-container[data-entityType="cause"] {
+    background: $CPrimaryBackground;
+}
+
+.header-container[data-entityType="donator"] {
+    background: $DPrimaryBackground;
+}

@@ -1,0 +1,35 @@
+.notificationButton-container {
+    padding-left: 10px;
+    .ui.button {
+        color: $DPrimaryColor;
+        background: $DDarkBackground;
+        -webkit-transition: 0.4s ease-in-out;
+        -moz-transition: 0.4s ease-in-out;
+        -o-transition: 0.4s ease-in-out;
+    }
+    .ui.button:hover {
+        color: $DDarkBackground;
+        background: $DPrimaryColor;
+    }
+}
+.notificationButton-container[data-entityType="cause"] {
+    .ui.button {
+        color: $CPrimaryColor;
+        background: $CDarkBackground;
+    }
+    .ui.button:hover {
+        color: $CDarkBackground;
+        background: $CPrimaryColor;
+    }
+}
+
+.notificationButton-container[data-entityType="donator"] {
+    .ui.button {
+        color: $DPrimaryColor;
+        background: $DDarkBackground;
+    }
+    .ui.button:hover {
+        color: $DDarkBackground;
+        background: $DPrimaryColor;
+    }
+}

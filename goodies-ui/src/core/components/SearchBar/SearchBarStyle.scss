@@ -1,0 +1,186 @@
+.box {
+    height: 100%;
+    display: flex; //align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.container-2 {
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    input.search {
+        width: 150px;
+        height: 40px;
+        background: $DDarkBackground;
+        border: none;
+        font-size: 10pt;
+        float: left;
+        color: #fff;
+        padding-left: 15px;
+        -webkit-border-radius: 500rem;
+        -moz-border-radius: 500rem;
+        border-radius: 500rem;
+        outline: none; //transitions
+        -webkit-transition: all .55s ease;
+        -moz-transition: all .55s ease;
+        -ms-transition: all .55s ease;
+        -o-transition: all .55s ease;
+        transition: all .55s ease;
+    }
+    input.search::-webkit-input-placeholder {
+        color: $DPrimaryColor;
+        opacity: 0.7;
+    }
+    input.search:-moz-placeholder {
+        /* Firefox 18- */
+        color: $DPrimaryColor;
+        opacity: 0.7;
+    }
+    input.search::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $DPrimaryColor;
+        opacity: 0.7;
+    }
+    input.search:-ms-input-placeholder {
+        color: $DPrimaryColor;
+        opacity: 0.7;
+    } //
+    input.search:active::-webkit-input-placeholder,
+    input.search:focus::-webkit-input-placeholder {
+        color: $DPrimaryColor;
+        opacity: 1;
+    }
+    input.search:active::-moz-input-placeholder,
+    input.search:focus::-moz-input-placeholder {
+        /* Firefox 18- */
+        color: $DPrimaryColor;
+        opacity: 1;
+    }
+    input.search:active:-moz-placeholder,
+    input.search:focus:-moz-placeholder {
+        /* Firefox 19+ */
+        color: $DPrimaryColor;
+        opacity: 1;
+    }
+    input.search:active::-ms-input-placeholder,
+    input.search:focus::-ms-input-placeholder {
+        color: $DPrimaryColor;
+        opacity: 1;
+    }
+    .button {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        border-radius: 50%;
+        border: 0; // background: #00ff00;//$DDarkBackground;
+        height: 40px;
+        width: 40px;
+        color: $DPrimaryColor;
+        opacity: .7;
+        font-size: 15pt;
+        -webkit-transition: all .55s ease;
+        -moz-transition: all .55s ease;
+        -ms-transition: all .55s ease;
+        -o-transition: all .55s ease;
+        transition: all .55s ease;
+        margin-left: -40px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center
+    }
+    input.search:focus,
+    input.search:active {
+        width: 250px;
+        opacity: 1;
+        .button {
+            opacity: 1;
+        }
+    }
+}
+
+.container-2[data-entityType="cause"]  {
+    input.search {
+        background: $CDarkBackground;
+    }
+    input.search::-webkit-input-placeholder {
+        color: $CPrimaryColor;
+    }
+    input.search:-moz-placeholder {
+        /* Firefox 18- */
+        color: $CPrimaryColor;
+    }
+    input.search::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $CPrimaryColor;
+    }
+    input.search:-ms-input-placeholder {
+        color: $CPrimaryColor;
+    } //
+    input.search:active::-webkit-input-placeholder,
+    input.search:focus::-webkit-input-placeholder {
+        color: $CPrimaryColor;
+    }
+    input.search:active::-moz-input-placeholder,
+    input.search:focus::-moz-input-placeholder {
+        /* Firefox 18- */
+        color: $CPrimaryColor;
+    }
+    input.search:active:-moz-placeholder,
+    input.search:focus:-moz-placeholder {
+        /* Firefox 19+ */
+        color: $CPrimaryColor;
+    }
+    input.search:active::-ms-input-placeholder,
+    input.search:focus::-ms-input-placeholder {
+        color: $CPrimaryColor;
+    }
+    .button {
+        color: $CPrimaryColor;
+    }
+}
+
+container-2[data-entityType="donator"]  {
+    input.search {
+        background: $DDarkBackground;
+    }
+    input.search::-webkit-input-placeholder {
+        color: $DPrimaryColor;
+    }
+    input.search:-moz-placeholder {
+        /* Firefox 18- */
+        color: $DPrimaryColor;
+    }
+    input.search::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $DPrimaryColor;
+    }
+    input.search:-ms-input-placeholder {
+        color: $DPrimaryColor;
+    } //
+    input.search:active::-webkit-input-placeholder,
+    input.search:focus::-webkit-input-placeholder {
+        color: $DPrimaryColor;
+    }
+    input.search:active::-moz-input-placeholder,
+    input.search:focus::-moz-input-placeholder {
+        /* Firefox 18- */
+        color: $DPrimaryColor;
+    }
+    input.search:active:-moz-placeholder,
+    input.search:focus:-moz-placeholder {
+        /* Firefox 19+ */
+        color: $DPrimaryColor;
+    }
+    input.search:active::-ms-input-placeholder,
+    input.search:focus::-ms-input-placeholder {
+        color: $DPrimaryColor;
+    }
+    .button {
+        color: $DPrimaryColor;
+    }
+}
