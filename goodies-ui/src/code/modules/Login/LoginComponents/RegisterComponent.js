@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'semantic-ui-react'
 import { Field, reduxForm } from 'redux-form'
-import CustomField from '../../../components/CustomField/CustomField'
+import CustomField from '../../../core/CustomField/CustomField'
 
 const validate = values => {
   const errors = {}

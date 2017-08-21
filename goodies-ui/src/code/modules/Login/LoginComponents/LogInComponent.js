@@ -1,17 +1,26 @@
 import React, { Component } from 'react'
 import {Form, Button} from 'semantic-ui-react'
 import {Field, reduxForm} from 'redux-form'
-import CustomField from '../../../components/CustomField/CustomField'
+import CustomField from '../../../core/CustomField/CustomField'
 
 const validate = values => {
   const errors = {}
   return errors
 }
 
+// entity === true => cause
+// entity === fale => donor
+
 class LogIn extends Component {
+
+  onLoginClick = () => {
+    
+  }
+
   render () {
+    console.log(this.props)
     return (
-      <Form inverted>
+      <Form inverted onSubmit={this.props.handleSubmit(this.onLoginClick)}>
         <Field
           name='email'
           type='text'
@@ -26,7 +35,13 @@ class LogIn extends Component {
           label='Password'
           placeholder='Not1234'
         />
-        <Button fluid type='submit' className='submitContainerButton'>Login</Button>
+        <Button
+          fluid
+          type='button'
+          className='submitContainerButton'
+          onClick={this.onLoginClick}
+          >Login
+        </Button>
       </Form>
     )
   }

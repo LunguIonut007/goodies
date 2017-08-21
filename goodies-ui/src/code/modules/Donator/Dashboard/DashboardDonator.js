@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import PageHeader from '../../../components/PageHeader/PageHeader'
-import CardDonator from '../../../components/CardDonator/CardDonatorComponent'
+import PageHeader from '../../../core/PageHeader/PageHeader'
+import CardDonator from './../CardDonator/CardDonatorComponent'
 
 export default class DashboardComponent extends Component {
   donatori = [

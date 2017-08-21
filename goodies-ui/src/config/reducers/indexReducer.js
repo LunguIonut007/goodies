@@ -5,7 +5,8 @@ import { reducer as formReducer } from 'redux-form'
 const combined = combineReducers(
   {
     routing: routerReducer,
-    form: formReducer
+    form: formReducer,
+    login: require('./../../code/modules/Login/LoginRedux').reducer
   }
 )
 

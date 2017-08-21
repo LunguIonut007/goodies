@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Icon } from 'semantic-ui-react'
-// import LanguageSwitcher from '../../../components/LanguageSwitcher/LanguageSwitcher'
+// import LanguageSwitcher from '../../../core/LanguageSwitcher/LanguageSwitcher'
 export default class FooterComponent extends Component {
   render () {
     return (

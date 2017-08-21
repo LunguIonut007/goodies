@@ -7,10 +7,10 @@ import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './config/stores/indexStore'
 import routes from './config/history/routes'
-import Layout from './core/containers/layout/Layout'
-import LoginPage from './core/containers/Login/LoginPage'
-import DashboardDonator from './core/containers/Donator/Dashboard/DashboardDonator'
-import DashboardCause from './core/containers/Cause/Dashboard/DashboardCause'
+import Layout from './code/modules/layout/Layout'
+import LoginPage from './code/modules/Login/LoginPage'
+import DashboardDonator from './code/modules/Donator/Dashboard/DashboardDonator'
+import DashboardCause from './code/modules/Cause/Dashboard/DashboardCause'
 
 require('./style/index.scss')
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import PageHeader from '../../../components/PageHeader/PageHeader'
-import CardCause from '../../../components/CardCause/CardCauseComponent'
+import PageHeader from '../../../core/PageHeader/PageHeader'
+import CardCause from '../CardCause/CardCauseComponent'
 
 export default class DashboardComponent extends Component {
   causes = [

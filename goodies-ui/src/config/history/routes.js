@@ -1,6 +1,6 @@
-import Login from '../../core/containers/Login/LoginPage'
-import syncAuthCheck from '../../core/containers/Main/MainReducer'
-import Main from '../../core/containers/Main/Main'
+import Login from '../../code/modules/Login/LoginPage'
+import syncAuthCheck from '../../code/modules/Main/MainReducer'
+import Main from '../../code/modules/Main/Main'
 import donatorRoutes from './donatorRoutes'
 import causeRoutes from './causeRoutes'
 

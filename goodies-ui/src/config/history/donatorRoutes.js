@@ -1,5 +1,5 @@
-import Layout from '../../core/containers/layout/Layout'
-import DashboardDonator from '../../core/containers/Donator/Dashboard/DashboardDonator'
+import Layout from '../../code/modules/layout/Layout'
+import DashboardDonator from '../../code/modules/Donator/Dashboard/DashboardDonator'
 // TODO
 module.exports = {
   path: 'donator',

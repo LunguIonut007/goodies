@@ -202,12 +202,14 @@ class WebpackBaseConfig {
       resolve: {
         alias: {
           actions: `${this.srcPathAbsolute}/actions/`,
-          components: `${this.srcPathAbsolute}/components/`,
+          components: `${this.srcPathAbsolute}/core/`,
           config: `${this.srcPathAbsolute}/config/${this.env}.js`,
           images: `${this.srcPathAbsolute}/images/`,
           sources: `${this.srcPathAbsolute}/sources/`,
           stores: `${this.srcPathAbsolute}/stores/`,
-          styles: `${this.srcPathAbsolute}/styles/`
+          styles: `${this.srcPathAbsolute}/styles/`,
+          api: `${this.srcPathAbsolute}/config/services/api.js`,
+          core: `${this.srcPathAbsolute}/code/core`
         },
         extensions: ['.js', '.jsx'],
         modules: [

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import Avatar from '../Avatar/AvatarComponent'
-import LikeButton from '../LikeButton/LikeButton'
-import ContactButton from '../ContactButton/ContactButton'
-import HelpButton from '../HelpButton/HelpButtons'
+import Avatar from 'core/Avatar/AvatarComponent'
+import LikeButton from 'core/LikeButton/LikeButton'
+import ContactButton from 'core/ContactButton/ContactButton'
+import HelpButton from 'core/HelpButton/HelpButtons'
+
 export default class CardComponent extends Component {
   render () {
     const {name, src, motto, shortDescription} = this.props
