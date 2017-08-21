@@ -11,7 +11,7 @@ import Layout from './code/modules/layout/Layout'
 import LoginPage from './code/modules/Login/LoginPage'
 import DashboardDonator from './code/modules/Donator/Dashboard/DashboardDonator'
 import DashboardCause from './code/modules/Cause/Dashboard/DashboardCause'
-
+import ReduxToastr from 'react-redux-toastr'
 require('./style/index.scss')
 
 const store = configureStore()
@@ -24,6 +24,15 @@ ReactDOM.render(
     <Provider store={store}>
       {/* comment pentru ca nu merge
       <Router history={history} routes={routes} /> */}
+      <div>
+      <ReduxToastr
+        timeOut={4000}
+        newestOnTop
+        preventDuplicates
+        position="top-right"
+        transitionIn="fadeIn"
+        transitionOut="fadeOut"
+      />
       <Router history={history}>
         <Route path='login' component={LoginPage} />
         <Route path='donator' component={Layout}>
@@ -33,6 +42,7 @@ ReactDOM.render(
           <Route path='dashboard' component={DashboardCause} />
         </Route>
       </Router>
+     </div>
     </Provider>
   </AppContainer>,
   document.getElementById('app')

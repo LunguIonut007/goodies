@@ -43,6 +43,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+@import './../../node_modules/react-redux-toastr/src/styles/index';
 @import 'variables.scss';
 @import 'layout.scss';
 @import '../code/core/ComponentStyle.scss';
