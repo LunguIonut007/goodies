@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PageHeader from '../../../core/PageHeader/PageHeader'
 import CardCause from '../CardCause/CardCauseComponent'
-
+import AddModal from './../CauseAdd/CauseAddModal'
 export default class DashboardComponent extends Component {
   causes = [
     {
@@ -33,7 +33,9 @@ export default class DashboardComponent extends Component {
         <div className='basic-container'>
           <div style={{paddingBottom: 40}}>
           <PageHeader title='Dashboard' />
+          <AddModal/>
           </div>
+
           <div className='card-container'>
             {
               this.causes.map((cause, index) => (<CardCause name={cause.name} shortDescription={cause.shortDescription} motto={cause.motto} src={cause.avatar} />))
