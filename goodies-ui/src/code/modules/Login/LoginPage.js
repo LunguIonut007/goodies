@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import LogIn from './LoginComponents/LogInComponent';
 import Register from './LoginComponents/RegisterComponent';
 
-
 // TODO
 // simple validation for error design
 // i18n

@@ -2,8 +2,8 @@
 import apisauce from 'apisauce'
 
 // our "constructor"
-// http://localhost:8080/api is the address of the spring server
-const create = (baseURL = 'http://localhost:8080/api') => {
+// http://localhost:8080/ is the address of the spring server
+const create = (baseURL = 'http://localhost:8080/') => {
   const api = apisauce.create({
     // base URL is read from the "constructor"
     baseURL,
@@ -16,6 +16,7 @@ const create = (baseURL = 'http://localhost:8080/api') => {
 
   return {
     // a list of the API functions
+    login : (username, password) => api.post(`/api_login?username=${username}&password=${password}`)
   }
 }
 

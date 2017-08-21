@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import {Form, Button} from 'semantic-ui-react'
 import {Field, reduxForm} from 'redux-form'
-import CustomField from '../../../core/CustomField/CustomField'
+import { connect } from 'react-redux'
+import CustomField from 'core/CustomField/CustomField'
+import LoginActions from './../LoginRedux'
 
 const validate = values => {
   const errors = {}
@@ -10,11 +12,10 @@ const validate = values => {
 
 // entity === true => cause
 // entity === fale => donor
-
 class LogIn extends Component {
 
   onLoginClick = () => {
-    
+   this.props.login('m@m.m','password')
   }
 
   render () {
@@ -46,7 +47,5 @@ class LogIn extends Component {
     )
   }
 }
-export default reduxForm({
-  form: 'login',
-  validate
-})(LogIn)
+
+export default connect(null,{login: LoginActions.loginRequest})(reduxForm({ form: 'login', validate})(LogIn))

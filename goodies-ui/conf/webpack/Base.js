@@ -209,7 +209,8 @@ class WebpackBaseConfig {
           stores: `${this.srcPathAbsolute}/stores/`,
           styles: `${this.srcPathAbsolute}/styles/`,
           api: `${this.srcPathAbsolute}/config/services/api.js`,
-          core: `${this.srcPathAbsolute}/code/core`
+          core: `${this.srcPathAbsolute}/code/core`,
+          modules: `${this.srcPathAbsolute}/code/modules`
         },
         extensions: ['.js', '.jsx'],
         modules: [

@@ -1,10 +1,13 @@
-import { takeLatest } from 'redux-saga/effects'
+import { takeLatest,all } from 'redux-saga/effects'
+import API from 'api'
+//Log in
+import { login } from 'modules/Login/LoginSagas'
+import { LoginTypes } from 'modules/Login/LoginRedux'
 
-function * test ({type, payload}) {
-  console.log(type)
-  console.log(payload)
-}
+const api = API.create();
 
 export default function * mySaga () {
-  yield takeLatest('TEST', test)
+  yield all([
+    takeLatest(LoginTypes.LOGIN_REQUEST,login, api)
+  ])
 }
