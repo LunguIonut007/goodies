@@ -10,7 +10,7 @@ export default class MenuComponent extends Component {
    // find the menuItem with the given name and push it in browserHistory so the client is sent to the new page
     const item = this.props.menuItems.filter(menuItem => name === menuItem.name)[0];
 
-    browserHistory.push('login')
+   // browserHistory.push('login')
 
   }
 

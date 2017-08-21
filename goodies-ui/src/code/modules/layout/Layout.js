@@ -6,7 +6,8 @@ import Sidebar from '../../core/SideBar/SidebarComponent'
 
 class Layout extends React.Component {
   render () {
-    let entityType = 'donor'
+    const { entityType } = this.props
+    console.log(entityType)
     return (
       <div className='content-container' data-entityType={entityType}>
         <Sidebar entityType={entityType} />
@@ -22,4 +23,11 @@ Layout.propTypes = {
   children: PropTypes.node
 }
 
-export default connect()(Layout)
+const getType = path => {
+  if(path.indexOf('donator') !== -1) return 'donor';
+  else return 'cause';
+}
+
+export default connect( state => ({
+  entityType: getType(state.routing.locationBeforeTransitions.pathname)
+}), null)(Layout)
