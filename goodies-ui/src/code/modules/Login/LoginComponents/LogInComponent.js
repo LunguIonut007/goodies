@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import CustomField from 'core/CustomField/CustomField'
 import LoginActions from './../LoginRedux'
 import {toastr} from 'react-redux-toastr'
+import { I18n } from 'react-redux-i18n'
 
 const validate = values => {
   const errors = {}
@@ -18,6 +19,7 @@ class LogIn extends Component {
   onLoginClick = () => {
    toastr.success('yusss','ssa')
    this.props.login('m@m.m','password')
+   console.log(I18n.t('name'))
   }
 
   render () {

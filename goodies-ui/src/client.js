@@ -12,12 +12,21 @@ import LoginPage from './code/modules/Login/LoginPage'
 import DashboardDonator from './code/modules/Donator/Dashboard/DashboardDonator'
 import DashboardCause from './code/modules/Cause/Dashboard/DashboardCause'
 import ReduxToastr from 'react-redux-toastr'
+import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
 require('./style/index.scss')
+
+const translationsObject = {
+  en: require('./i18n/en.json'),
+  ro: require('./i18n/ro.json')
+}
 
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
 
-store.dispatch({ type: 'TEST', payload: 3 })
+syncTranslationWithStore(store)
+store.dispatch(loadTranslations(translationsObject))
+store.dispatch(setLocale('en'))
+
 // TODO !! routes
 ReactDOM.render(
   <AppContainer>
