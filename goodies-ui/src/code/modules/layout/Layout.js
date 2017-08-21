@@ -12,7 +12,7 @@ class Layout extends React.Component {
       <div className='content-container' data-entityType={entityType}>
         <Sidebar entityType={entityType} />
         <Header entityType={entityType} />
-        {this.props.children} lorem3000
+        {this.props.children}
         <Footer entityType={entityType} />
       </div>
     )

@@ -1,20 +1,19 @@
 .card-container-cause{
     position:relative;
     background: $CPrimaryBackground;
-    width:100%;
-    padding:10px;
+    width:80%;
     margin-bottom: 80px;
-    height:30vh;
-    //border-radius: 30px;
+    min-height:30vh;
     display: flex;
     flex-direction: column;
-    padding: 30px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   // position: relative;
-   display: flex;
+
+    .upper {
+        display: flex;
+        padding: 30px;
+    }
     .card-avatar{
         margin-top:-100px;
-        //position: absolute;
     }
    .text{
         padding: 10px;
@@ -40,8 +39,7 @@
        text-overflow: ellipsis;
    }
    .buttons{
-       position: absolute;
-       bottom:0;
-       right:0;
+       align-self: flex-end;
+       padding: 5px;
    }
 }
