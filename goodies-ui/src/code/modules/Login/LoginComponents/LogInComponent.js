@@ -6,6 +6,7 @@ import CustomField from 'core/CustomField/CustomField'
 import LoginActions from './../LoginRedux'
 import {toastr} from 'react-redux-toastr'
 import { I18n } from 'react-redux-i18n'
+import { browserHistory } from 'react-router'
 
 const validate = values => {
   const errors = {}
@@ -20,6 +21,7 @@ class LogIn extends Component {
    toastr.success('yusss','ssa')
    this.props.login('m@m.m','password')
    console.log(I18n.t('name'))
+   browserHistory.push('cause/dashboard')
   }
 
   render () {

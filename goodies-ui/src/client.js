@@ -31,8 +31,6 @@ store.dispatch(setLocale('en'))
 ReactDOM.render(
   <AppContainer>
     <Provider store={store}>
-      {/* comment pentru ca nu merge
-      <Router history={history} routes={routes} /> */}
       <div>
       <ReduxToastr
         timeOut={4000}
