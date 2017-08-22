@@ -17,11 +17,8 @@ const validate = values => {
 // entity === fale => donor
 class LogIn extends Component {
 
-  onLoginClick = () => {
-   toastr.success('yusss','ssa')
-   this.props.login('m@m.m','password')
-   console.log(I18n.t('name'))
-   browserHistory.push('cause/dashboard')
+  onLoginClick = data => {
+   this.props.login(data.email,data.password)
   }
 
   render () {
@@ -46,7 +43,7 @@ class LogIn extends Component {
           fluid
           type='button'
           className='submitContainerButton'
-          onClick={this.onLoginClick}
+          onClick={this.props.handleSubmit(this.onLoginClick)}
           >Login
         </Button>
       </Form>

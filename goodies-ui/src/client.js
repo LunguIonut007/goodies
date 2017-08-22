@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, browserHistory, Redirect } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './config/stores/indexStore'
 import routes from './config/history/routes'
@@ -41,6 +41,7 @@ ReactDOM.render(
         transitionOut="fadeOut"
       />
       <Router history={history}>
+        <Redirect from='/' to='login'/>
         <Route path='login' component={LoginPage} />
         <Route path='donator' component={Layout}>
           <Route path='dashboard' component={DashboardDonator} />
