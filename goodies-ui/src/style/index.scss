@@ -47,6 +47,7 @@ table {
 @import 'variables.scss';
 @import 'layout.scss';
 @import '../code/core/ComponentStyle.scss';
-@import '../code/modules/Cause/CardCause/CardCauseStyle.scss';
-@import '../code/modules/Donator/CardDonator/CardDonatorStyle.scss';
+@import '../code/modules/Donator/OfferAdd/OfferAddStyles.scss';
+@import '../code/modules/Cause/CardOffer/CardOfferStyles.scss';
 @import '../code/modules/Login/LoginStyle.scss';
+@import '../code/modules/Donator/CardCause/CardCauseStyle.scss';

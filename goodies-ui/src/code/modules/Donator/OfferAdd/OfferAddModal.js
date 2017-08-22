@@ -3,6 +3,7 @@ import { Button, Form } from 'semantic-ui-react'
 import Modal from 'core/Modal/ModalComponent'
 import {Field, reduxForm} from 'redux-form'
 import CustomField from 'core/CustomField/CustomField'
+import CustomFieldLarge from 'core/CustomField/CustomFieldLarge'
 
 class CauseAddModal extends Component {
 
@@ -12,7 +13,7 @@ class CauseAddModal extends Component {
 
   onClick = () => {
       this.setState({open: !this.state.open})
-  }
+  } 
 
   onSubmit = () => {
 
@@ -26,27 +27,30 @@ class CauseAddModal extends Component {
             <Modal open={open} header={'Add offer'}  onClose={this.onClick}>
             <Form onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <Field
-                name='email'
+                name='title'
                 type='text'
                 component={CustomField}
-                label='Email'
-                placeholder='bestDonatorEvah@email.com'
+                label='title'
+                placeholder='Title'
                 />
                 <Field
-                name='password'
-                type='password'
-                component={CustomField}
-                label='Password'
-                placeholder='Not1234'
+                name='description'
+                type='text'
+                component={CustomFieldLarge}
+                label='description'
+                placeholder='description'
                 />
-                <Button
-                fluid
-                type='button'
-                className='submit-button'
-                onClick={this.props.handleSubmit(this.onSubmit)}
-                >Submit
-                </Button>
-                <Button fluid type='button' className='cancel-button'onClick={this.onClick}>Cancel</Button>
+                <div className="action-buttons-container">
+                    <Button
+                    fluid
+                    size='small'
+                    type='button'
+                    className='submit-button'
+                    onClick={this.props.handleSubmit(this.onSubmit)}
+                    >Submit
+                    </Button>
+                    <Button fluid type='button' size='small' className='cancel-button' onClick={this.onClick}>Cancel</Button>
+                </div>
             </Form>
             </Modal>
         </div>

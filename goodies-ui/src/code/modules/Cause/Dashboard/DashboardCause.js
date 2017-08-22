@@ -1,45 +1,21 @@
 import React, { Component } from 'react'
 import PageHeader from '../../../core/PageHeader/PageHeader'
-import CardCause from '../CardCause/CardCauseComponent'
-import AddModal from './../CauseAdd/CauseAddModal'
-export default class DashboardComponent extends Component {
-  causes = [
-    {
-      name: 'Onestin',
-      ups: 3045,
-      shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nemo quia pariatur, sapiente atque, ab quidem, aut enim quo expedita odio. Voluptate placeat adipisci molestias cupiditate perferendis sapiente id quod!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nemo quia pariatur, sapiente atque, ab quidem, aut enim quo expedita odio. Voluptate placeat adipisci molestias cupiditate perferendis sapiente id quod!',
-      avatar: 'http://lorempixel.com/400/800/',
-            motto:'impreuna putem schimba lumea'
-    },
-    {
-      name: 'Alt ong jmek',
-      ups: 2002,
-      shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nemo quia pariatur, sapiente atque, ab quidem, aut enim quo expedita odio. Voluptate placeat adipisci molestias cupiditate perferendis sapiente id quod!',
-      avatar: 'http://lorempixel.com/400/800/',
-            motto:'impreuna putem schimba lumea'
+import CardOffer from './../CardOffer/CardOffer'
 
-    },
-    {
-      name: 'Alt ong jmek',
-      ups: 2002,
-      shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nemo quia pariatur, sapiente atque, ab quidem, aut enim quo expedita odio. Voluptate placeat adipisci molestias cupiditate perferendis sapiente id quod!',
-      avatar: 'http://lorempixel.com/400/800/',
-      motto:'impreuna putem schimba lumea'
-    }
-  ]
+export default class DashboardComponent extends Component {
+
+  offers = [{title: 'dddd', description: 'Lorem ipsum.', id: 1}, { id:3, title: 'Lorem ipsum dolor.', description: 'Lorem ipsum dolor sit amet.' }]
+
   render() {
     return (
       <div className='container' style={{minHeight: '90vh'}}>
         <div className='basic-container'>
           <div style={{paddingBottom: 40}}>
           <PageHeader title='Dashboard' />
-          <AddModal/>
           </div>
 
           <div className='card-container'>
-            {
-              this.causes.map((cause, index) => (<CardCause name={cause.name} shortDescription={cause.shortDescription} motto={cause.motto} src={cause.avatar} />))
-            }
+            {this.offers.map( offer => <CardOffer offer={offer} key={offer.id} />)}
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import PageHeader from '../../../core/PageHeader/PageHeader'
-import CardDonator from './../CardDonator/CardDonatorComponent'
+import CardCause from './../CardCause/CardCauseComponent'
+import AddModal from './../OfferAdd/OfferAddModal'
 
 export default class DashboardComponent extends Component {
-  donatori = [
+  causes = [
     {
       name: 'Onestin',
       ups: 3045,
@@ -28,8 +29,12 @@ export default class DashboardComponent extends Component {
       <div className='container'>
         <div>
           <PageHeader title='Dashboard' />
+          <AddModal/>
           <div className='card-container'>
-            hello
+            {
+              this.causes.map((cause, index) => 
+              <CardCause name={cause.name} shortDescription={cause.shortDescription} motto={cause.motto} src={cause.avatar} />)
+            }
           </div>
         </div>
       </div>
