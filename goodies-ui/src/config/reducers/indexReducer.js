@@ -11,7 +11,8 @@ const combined = combineReducers(
     toastr: toastrReducer,
     i18n: i18nReducer,
     login: require('./../../code/modules/Login/LoginRedux').reducer,
-    register: require('modules/Login/RegisterRedux').reducer
+    register: require('modules/Login/RegisterRedux').reducer,
+    offers: require('modules/Offer/OfferRedux').reducer
   }
 )
 

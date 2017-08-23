@@ -18,7 +18,8 @@ const create = (baseURL = 'http://localhost:8080/') => {
     // a list of the API functions
     login : (username, password) => api.post(`/api_login?username=${username}&password=${password}`),
     logout: () => api.get('/logout'),
-    register: data => api.post('/register', data)
+    register: data => api.post('/register', data),
+    getOffers : () => api.get('/offer')
   }
 }
 
