@@ -22,7 +22,7 @@ class LogIn extends Component {
   }
 
   render () {
-    console.log(this.props)
+
     return (
       <Form inverted onSubmit={this.props.handleSubmit(this.onLoginClick)}>
         <Field

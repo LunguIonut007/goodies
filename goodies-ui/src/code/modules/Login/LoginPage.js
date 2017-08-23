@@ -48,7 +48,7 @@ export default class Template extends React.Component {
                           <LogIn entity={this.state.entity}/>
                         </Tab.Pane>
                         <Tab.Pane eventKey={2} >
-                         <Register/>
+                         <Register entityType={this.state.entity ? 'cause' : 'donor'}/>
                         </Tab.Pane>
                       </Tab.Content>
                     </div>

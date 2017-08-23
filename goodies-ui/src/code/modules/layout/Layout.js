@@ -7,7 +7,7 @@ import Sidebar from '../../core/SideBar/SidebarComponent'
 class Layout extends React.Component {
   render () {
     const { entityType } = this.props
-    console.log(entityType)
+
     return (
       <div className='content-container' data-entityType={entityType}>
         <Sidebar entityType={entityType} />

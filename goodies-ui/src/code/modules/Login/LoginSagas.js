@@ -16,5 +16,9 @@ export function * login (api, { username, password }) {
 }
 
 export function * logout (api) {
-  yield call(api.logout)
+  const response = yield call(api.logout)
+
+  if(response.status === 200) {
+    browserHistory.push('/login')
+  }
 }

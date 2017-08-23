@@ -31,6 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired private AuthenticationEntryPoint authenticationEntryPoint;
 
+    @Autowired private CustomLogoutSuccessHandler logoutSuccessHandler;
+
     @Autowired private DataSource dataSource;
 
     @Autowired private UserDetailsService userDetailsService;
@@ -67,6 +69,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID")
+                .logoutSuccessHandler(logoutSuccessHandler)
                 .permitAll()
                 .and()
                 .csrf()
