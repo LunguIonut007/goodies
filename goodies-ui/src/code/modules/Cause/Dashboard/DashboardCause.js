@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import PageHeader from '../../../core/PageHeader/PageHeader'
+import { connect } from 'react-redux'
+import OfferActions from 'modules/Offer/OfferRedux'
 import CardOffer from './../CardOffer/CardOffer'
 
-export default class DashboardComponent extends Component {
+class DashboardComponent extends Component {
 
   offers = [{title: 'dddd', description: 'Lorem ipsum.', id: 1}, { id:3, title: 'Lorem ipsum dolor.', description: 'Lorem ipsum dolor sit amet.' }]
+
+  componentDidMount() {
+    this.props.getOffers()
+  }
 
   render() {
     return (
@@ -23,3 +29,12 @@ export default class DashboardComponent extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({
+    offers: state.offers.list
+  }),
+  {
+    getOffers: OfferActions.getOffersRequest
+  }
+)(DashboardComponent)

@@ -11,7 +11,8 @@ const create = (baseURL = 'http://localhost:8080/') => {
     headers: {
     },
     // 10 second timeout...
-    timeout: 10240
+    timeout: 10240,
+    withCredentials: true
   })
 
   return {

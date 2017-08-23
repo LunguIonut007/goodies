@@ -12,11 +12,12 @@ export default Creators
 
 const INITIAL_STATE = Immutable({
   error: null,
-  fetching: false
+  fetching: false,
+  list: []
 })
 
 export const reducer = createReducer(INITIAL_STATE, {
     GET_OFFERS_REQUEST: state => state.merge({fetching: true}),
-    GET_OFFERS_SUCCESS: (state, { data }) => state.merge({fetching: false, ...data}),
+    GET_OFFERS_SUCCESS: (state, { data }) => state.merge({fetching: false, list:data}),
     GET_OFFERS_ERROR: (state, {error}) => state.merge({fetching: false,error})
 })
