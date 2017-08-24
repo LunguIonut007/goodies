@@ -12,7 +12,7 @@ class Page extends Component {
       <div className='container' style={{minHeight: '90vh'}}>
         <div className='basic-container'>
           <div style={{paddingBottom: 40}}>
-          <PageHeader title='My proposals' />
+          <PageHeader title='My accepted proposals' />
           </div>
         </div>
       </div>

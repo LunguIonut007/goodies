@@ -13,7 +13,8 @@ const combined = combineReducers(
     login: require('modules/Login/LoginRedux').reducer,
     register: require('modules/Login/RegisterRedux').reducer,
     offers: require('modules/Offer/OfferRedux').reducer,
-    causes: require('modules/Cause/CauseRedux').reducer
+    causes: require('modules/Cause/CauseRedux').reducer,
+    proposals: require('modules/Proposal/ProposalRedux').reducer
   }
 )
 

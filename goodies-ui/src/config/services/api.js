@@ -21,7 +21,11 @@ const create = (baseURL = 'http://localhost:8080/') => {
     logout: () => api.get('/logout'),
     register: data => api.post('/register', data),
     getOffers : () => api.get('/offer'),
-    getCauses: () => api.get('/cause')
+    getCauses: () => api.get('/cause'),
+    getOwnOffers: () => api.get('/offer/getOwn'),
+    saveOffer: data => api.post('/offer',data),
+    getProposalsDonor: () => api.get('/proposal/getOwn'),
+    saveProposal: data => api.post('/proposal')
   }
 }
 

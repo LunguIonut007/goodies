@@ -9,18 +9,10 @@ export default class CardComponent extends Component {
             <Card.Content header={offer.title} />
               <Card.Content description={offer.description} className="text" />
               <Card.Content extra>
-                {/* <Icon name='user' /> */}
-               <Button>Request</Button>
+               {offer.requested != undefined &&
+                  <Button icon={offer.requested && 'checkmark'} content='Request' disabled={offer.requested}/>}
           </Card.Content>
       </Card>
     )
   }
 }
-
-{/* <div className='card-offer-container'>
-<div className='title'>{offer.title}</div>
-<div className='description'>{offer.description}</div>
-<div className='buttons'>
-  <Button>request</Button>
-</div>
-</div> */}

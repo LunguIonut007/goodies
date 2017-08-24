@@ -4,6 +4,8 @@ import Modal from 'core/Modal/ModalComponent'
 import {Field, reduxForm} from 'redux-form'
 import CustomField from 'core/CustomField/CustomField'
 import CustomFieldLarge from 'core/CustomField/CustomFieldLarge'
+import OfferActions from 'modules/Offer/OfferRedux'
+import { connect } from 'react-redux'
 
 class CauseAddModal extends Component {
 
@@ -15,8 +17,9 @@ class CauseAddModal extends Component {
       this.setState({open: !this.state.open})
   } 
 
-  onSubmit = () => {
-
+  onSubmit = data => {
+    console.log(data)
+    this.props.saveOffer(data)
   }
 
   render() {
@@ -63,4 +66,10 @@ const validate = values => {
     return errors
   }
 
-export default reduxForm({ form: 'causeAdd', validate})(CauseAddModal)
+export default connect(
+    state => ({
+
+    }), {
+        saveOffer: OfferActions.saveOfferRequest
+    }
+)(reduxForm({ form: 'causeAdd', validate})(CauseAddModal))

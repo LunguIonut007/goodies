@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PageHeader from '../../../core/PageHeader/PageHeader'
 import { connect } from 'react-redux'
 import OfferActions from 'modules/Offer/OfferRedux'
-import CardOffer from './../CardOffer/CardOffer'
+import CardOffer from 'modules/Offer/CardOffer/CardOffer'
 
 class DashboardComponent extends Component {
 

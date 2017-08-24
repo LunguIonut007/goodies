@@ -23,4 +23,5 @@ public class OrganizationController extends GenericController<Organization> {
 
         return org.getUser().getId();
     }
+
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="5-a" author="adrian.lungu">
+        <sql>
+            ALTER TABLE `donesti`.`proposal`
+            CHANGE COLUMN `USER_ID` `DONOR_ID` INT(11) NOT NULL ,
+            ADD COLUMN `OFFER_ID` INT(11) NOT NULL AFTER `DONOR_ID`;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

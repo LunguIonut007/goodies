@@ -11,3 +11,24 @@ export function * getOffers(api) {
         yield put(OfferActions.getOffersError('error'))
     }
 }
+
+export function * getOwnOffers(api) {
+    const response = yield call(api.getOwnOffers)
+
+    if(response.status === 200) {
+        yield put(OfferActions.getOwnOffersSuccess(response.data.data))
+    } else {
+        yield put(OfferActions.getOwnOffersError('error'))
+    } 
+}
+
+export function * saveOffer(api,{data}) {
+
+    const response = yield call(api.saveOffer,data)
+
+        if(response.status === 200) {
+            yield put(OfferActions.saveOfferSuccess())
+        } else {
+            yield put(OfferActions.saveOfferError('error'))
+        } 
+}
