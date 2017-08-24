@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Icon } from 'semantic-ui-react'
-// import LanguageSwitcher from '../../../core/LanguageSwitcher/LanguageSwitcher'
+import LanguageSwitcher from 'core/LanguageSwitcher/LanguageSwitcher'
+
 export default class FooterComponent extends Component {
   render () {
     return (
@@ -59,7 +60,7 @@ export default class FooterComponent extends Component {
           Powered By SaphireDEVils
         </div>
         <div className='language-switcher-container'>
-          {/* <LanguageSwitcher /> */}
+          <LanguageSwitcher />
         </div>
       </div>
 
