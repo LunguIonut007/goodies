@@ -1,5 +1,7 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
+import {browserHistory} from 'react-router'
+import {toastr} from 'react-redux-toastr'
 
 // our "constructor"
 // http://localhost:8080/ is the address of the spring server
@@ -13,6 +15,13 @@ const create = (baseURL = 'http://localhost:8080/') => {
     // 10 second timeout...
     timeout: 10240,
     withCredentials: true
+  })
+
+  api.addResponseTransform(response => {
+    if(response.status === 401) {
+      toastr.warning('Please log in to the page!')
+      browserHistory.push('/login')
+    }
   })
 
   return {
