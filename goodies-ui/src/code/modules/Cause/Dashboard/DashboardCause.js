@@ -5,22 +5,21 @@ import OfferActions from 'modules/Offer/OfferRedux'
 import CardOffer from 'modules/Offer/CardOffer/CardOffer'
 
 class DashboardComponent extends Component {
-
-  componentDidMount() {
+  componentDidMount () {
     this.props.getOffers()
   }
 
-  render() {
+  render () {
     const { offers } = this.props
     return (
       <div className='container' style={{minHeight: '90vh'}}>
         <div className='basic-container'>
           <div style={{paddingBottom: 40}}>
-          <PageHeader title='Dashboard' />
+            <PageHeader title='Dashboard' />
           </div>
 
           <div className='card-offer-container'>
-            {offers.map( offer => <CardOffer offer={offer} key={offer.id} />)}
+            {offers.map(offer => <CardOffer offer={offer} key={offer.id} />)}
           </div>
         </div>
       </div>

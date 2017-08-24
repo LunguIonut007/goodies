@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import { DropdownButton, MenuItem } from 'react-bootstrap'
 
 export default class LanguageSwitcherComponent extends Component {
   render () {
-    const { locale, changeLocale } = this.props
+    // const { locale, changeLocale } = this.props
     const localeKey = {
       'en': 'English',
       'ro': 'Română'

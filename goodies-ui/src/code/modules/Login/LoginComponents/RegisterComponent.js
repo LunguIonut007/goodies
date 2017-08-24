@@ -28,7 +28,6 @@ const validate = values => {
 }
 
 class Register extends Component {
-
   onSubmit = data => {
     const { entityType } = this.props
     this.props.register(data, entityType)
@@ -72,11 +71,10 @@ class Register extends Component {
 }
 
 export default connect(
-  null,{
+  null, {
     register: RegisterActions.registerRequest
   }
-)
-(reduxForm({
+)(reduxForm({
   form: 'register',
   validate
 })(Register))

@@ -43,6 +43,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.ui.card:first-child {
+	margin-top: auto;
+}
+
+.ui.card:last-child {
+	margin-bottom: auto;
+}	
 @import './../../node_modules/react-redux-toastr/src/styles/index';
 @import 'variables.scss';
 @import 'layout.scss';

@@ -7,7 +7,7 @@ import lombok.Data;
 public class ProposalDto {
 
     private int id;
-    private int organizationId;
+    private OrganizationProposalDto organization;
     private boolean pending;
     private boolean accepted;
     private OfferDto offer;

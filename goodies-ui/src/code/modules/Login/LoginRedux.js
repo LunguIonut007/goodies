@@ -7,7 +7,11 @@ const { Types, Creators } = createActions({
   loginRequest: ['username', 'password'],
   loginSuccess: ['payload'],
   loginFailure: ['error'],
-  logout: null
+  logout: null,
+
+  getCurrentUserRequest: [],
+  getCurrentUserSuccess: ['payload'],
+  getCurrentUSerError: ['error']
 })
 
 export const LoginTypes = Types
@@ -33,5 +37,9 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.LOGIN_REQUEST]: request,
   [Types.LOGIN_SUCCESS]: success,
   [Types.LOGIN_FAILURE]: failure,
-  [Types.LOGOUT]: logout
+  [Types.LOGOUT]: logout,
+
+  [Types.GET_CURRENT_USER_REQUEST]: state => state.merge({ fetching: true }),
+  [Types.GET_CURRENT_USER_SUCCESS]: (state, { payload }) => state.merge({ fetching: false, error: null, ...payload }),
+  [Types.GET_CURRENT_USER_ERROR]: (state, { error }) => state.merge({ fetching: false, error, headers: null })
 })

@@ -1,5 +1,5 @@
 import Login from '../../code/modules/Login/LoginPage'
-import syncAuthCheck from '../../code/modules/Main/MainReducer'
+// import syncAuthCheck from '../../code/modules/Main/MainReducer'
 import Main from '../../code/modules/Main/Main'
 import donatorRoutes from './donatorRoutes'
 import causeRoutes from './causeRoutes'

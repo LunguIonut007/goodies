@@ -17,7 +17,8 @@
     "serve:dist": "webpack-dev-server --open --env dist -p --progress",
     "start": "npm run serve:dev",
     "test": "cross-env NODE_ENV=test karma start",
-    "test:watch": "cross-env NODE_ENV=test karma start --autoWatch=true --singleRun=false --reporters=mocha,coverage"
+    "test:watch": "cross-env NODE_ENV=test karma start --autoWatch=true --singleRun=false --reporters=mocha,coverage",
+    "standard": "standard --fix"
   },
   "repository": "",
   "keywords": [],
@@ -72,6 +73,7 @@
     "rimraf": "^2.5.2",
     "sass-loader": "^3.2.0",
     "sinon": "^1.17.3",
+    "standard": "^10.0.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack-dev-server": "^2.1.0-beta"
@@ -103,6 +105,21 @@
     "reduxsauce": "^0.4.1",
     "seamless-immutable": "^7.0.1",
     "semantic-ui-react": "^0.64.8",
+    "standard": "^10.0.3",
     "webpack": "^2.1.0-beta.6"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "it",
+      "fetch",
+      "navigator",
+      "__DEV__",
+      "XMLHttpRequest",
+      "FormData",
+      "React$Element",
+      "expect"
+    ]
   }
 }

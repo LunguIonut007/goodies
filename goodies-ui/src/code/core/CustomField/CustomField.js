@@ -3,7 +3,7 @@ import { Form, Icon } from 'semantic-ui-react'
 
 export default class CustomField extends Component {
   render () {
-    const { input, label, placeholder, type, meta: {asyncValidating, touched, error} } = this.props
+    const { input, label, placeholder, type, meta: {touched, error} } = this.props
     return (
       <Form.Field>
         <label>{label}</label>

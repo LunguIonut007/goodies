@@ -24,10 +24,10 @@ Layout.propTypes = {
 }
 
 const getType = path => {
-  if(path.indexOf('donator') !== -1) return 'donor';
-  else return 'cause';
+  if (path.indexOf('donator') !== -1) return 'donor'
+  else return 'cause'
 }
 
-export default connect( state => ({
+export default connect(state => ({
   entityType: getType(state.routing.locationBeforeTransitions.pathname)
 }), null)(Layout)

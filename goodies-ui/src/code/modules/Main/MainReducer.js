@@ -36,11 +36,10 @@ export const mainFailure = (state: Object, { error }: Object) =>
 export const mainClearFailure = (state: Object) =>
  state.merge({ error: null })
 
-
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.MAIN_REQUEST]: mainRequest,
   [Types.MAIN_SUCCESS]: mainSuccess,
-  [Types.MAIN_FAILURE]: mainFailure,
+  [Types.MAIN_FAILURE]: mainFailure
 })

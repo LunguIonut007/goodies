@@ -5,21 +5,20 @@ import ProposalActions from 'modules/Proposal/ProposalRedux'
 import RequestCard from './RequestCard/RequestCard'
 
 class Page extends Component {
-
-  componentDidMount() {
+  componentDidMount () {
     this.props.getRequests()
   }
 
-  render() {
+  render () {
     const { requests } = this.props
     return (
       <div className='container' style={{minHeight: '90vh'}}>
         <div className='basic-container'>
           <div style={{paddingBottom: 40}}>
-          <PageHeader title='Requests from causes' />
+            <PageHeader title='Requests from causes' />
           </div>
           <div>
-            {requests.map( request => <RequestCard request={request} key={request.id}/>)}
+            {requests.map(request => <RequestCard request={request} key={request.id} />)}
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import LoginActions from 'modules/Login/LoginRedux'
 
 class LogoutButton extends Component {
   onLogoutClick = () => {
-    this.props.logout();
+    this.props.logout()
   }
   render () {
     return (

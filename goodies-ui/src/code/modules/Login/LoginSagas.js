@@ -3,7 +3,6 @@ import LoginActions from './LoginRedux'
 import { browserHistory } from 'react-router'
 
 export function * login (api, { username, password }) {
-
   const response = yield call(api.login, username, password)
 
   if (response.status === 200) {
@@ -15,10 +14,20 @@ export function * login (api, { username, password }) {
   }
 }
 
+export function * getCurrentUser (api) {
+  const response = yield call(api.getCurrentUser)
+
+  if (response.status === 200) {
+    yield put(LoginActions.getCurrentUserSuccess(response.data.data))
+  } else {
+    yield put(LoginActions.getCurrentUserFailure('login failed'))
+  }
+}
+
 export function * logout (api) {
   const response = yield call(api.logout)
 
-  if(response.status === 200) {
+  if (response.status === 200) {
     browserHistory.push('/login')
   }
 }

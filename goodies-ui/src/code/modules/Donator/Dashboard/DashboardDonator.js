@@ -6,22 +6,21 @@ import { connect } from 'react-redux'
 import CauseActions from 'modules/Cause/CauseRedux'
 
 class DashboardComponent extends Component {
-
-  componentDidMount() {
+  componentDidMount () {
     this.props.getCauses()
   }
 
-  render() {
+  render () {
     const { causes } = this.props
     return (
       <div className='container'>
         <div>
           <PageHeader title='Dashboard' />
-          <AddModal/>
+          <AddModal />
           <div className='card-container'>
             {
-              causes.map(cause => 
-              <CardCause key={cause.id} name={cause.name} shortDescription={cause.address}src={'http://lorempixel.com/400/800'} />)
+              causes.map(cause =>
+                <CardCause key={cause.id} name={cause.name} shortDescription={cause.address}src={'http://react.semantic-ui.com/assets/images/avatar/large/matthew.png'} />)
             }
           </div>
         </div>

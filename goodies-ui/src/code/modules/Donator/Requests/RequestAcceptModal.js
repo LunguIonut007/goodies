@@ -4,10 +4,9 @@ import Modal from 'core/Modal/ModalComponent'
 import {Field, reduxForm} from 'redux-form'
 import CustomField from 'core/CustomField/CustomField'
 import CustomFieldLarge from 'core/CustomField/CustomFieldLarge'
-import OfferActions from 'modules/Offer/OfferRedux'
 import { connect } from 'react-redux'
 
-class CauseAddModal extends Component {
+class RequestAcceptModal extends Component {
   componentWillMount () {
     this.state = { open: false }
   }
@@ -68,6 +67,5 @@ export default connect(
     state => ({
 
     }), {
-      saveOffer: OfferActions.saveOfferRequest
     }
-)(reduxForm({ form: 'causeAdd', validate })(CauseAddModal))
+)(reduxForm({ form: 'requestAcceptModal', validate })(RequestAcceptModal))

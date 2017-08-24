@@ -18,7 +18,7 @@ const create = (baseURL = 'http://localhost:8080/') => {
   })
 
   api.addResponseTransform(response => {
-    if(response.status === 401) {
+    if (response.status === 401) {
       toastr.warning('Please log in to the page!')
       browserHistory.push('/login')
     }
@@ -26,15 +26,16 @@ const create = (baseURL = 'http://localhost:8080/') => {
 
   return {
     // a list of the API functions
-    login : (username, password) => api.post(`/api_login?username=${username}&password=${password}`),
+    login: (username, password) => api.post(`/api_login?username=${username}&password=${password}`),
     logout: () => api.get('/logout'),
     register: data => api.post('/register', data),
-    getOffers : () => api.get('/offer'),
+    getOffers: () => api.get('/offer'),
     getCauses: () => api.get('/cause'),
     getOwnOffers: () => api.get('/offer/getOwn'),
-    saveOffer: data => api.post('/offer',data),
+    saveOffer: data => api.post('/offer', data),
     getProposalsDonor: () => api.get('/proposal/getOwn'),
-    saveProposal: data => api.post('/proposal')
+    saveProposal: data => api.post('/proposal'),
+    getCurrentUser: () => api.get('/user')
   }
 }
 

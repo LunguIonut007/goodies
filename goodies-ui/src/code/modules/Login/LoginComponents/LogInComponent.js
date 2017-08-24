@@ -4,9 +4,8 @@ import {Field, reduxForm} from 'redux-form'
 import { connect } from 'react-redux'
 import CustomField from 'core/CustomField/CustomField'
 import LoginActions from './../LoginRedux'
-import {toastr} from 'react-redux-toastr'
-import { I18n } from 'react-redux-i18n'
-import { browserHistory } from 'react-router'
+// import {toastr} from 'react-redux-toastr'
+// import { I18n } from 'react-redux-i18n'
 
 const validate = values => {
   const errors = {}
@@ -16,13 +15,11 @@ const validate = values => {
 // entity === true => cause
 // entity === fale => donor
 class LogIn extends Component {
-
   onLoginClick = data => {
-   this.props.login(data.email,data.password)
+    this.props.login(data.email, data.password)
   }
 
   render () {
-
     return (
       <Form inverted onSubmit={this.props.handleSubmit(this.onLoginClick)}>
         <Field
@@ -51,4 +48,4 @@ class LogIn extends Component {
   }
 }
 
-export default connect(null,{login: LoginActions.loginRequest})(reduxForm({ form: 'login', validate})(LogIn))
+export default connect(null, {login: LoginActions.loginRequest})(reduxForm({ form: 'login', validate })(LogIn))
