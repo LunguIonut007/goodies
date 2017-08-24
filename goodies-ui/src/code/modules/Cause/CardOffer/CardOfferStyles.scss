@@ -1,27 +1,45 @@
-.card-offer-container {
-    position:relative;
-    background: $CPrimaryBackground;
-    width:80%;
-    margin-bottom: 80px;
-    min-height:30vh;
+
+.card-offer-container{
     display: flex;
-    flex-direction: column;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-grow: 1;
 
-    .title {
-        width: 10%;
-        text-align: center;
-        padding: 30px;
+    .text {
+        word-wrap: break-word;
     }
 
-    .description {
-        width: 75%;
-        padding: 20px;
+    .card {
+        margin: 10px;
     }
+  }
 
-    .buttons {
-        width: 15%;
-        align-self: flex-end;
-        padding: 20px;
-    }
-}
+
+// .card-offer-container {
+//     position:relative;
+//     background: $CPrimaryBackground;
+//     width:80%;
+//     margin-bottom: 80px;
+//     min-height:30vh;
+//     display: flex;
+//     flex-direction: column;
+//     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+//     .title {
+//         width: 10%;
+//         text-align: center;
+//         padding: 30px;
+//     }
+
+//     .description {
+//         width: 75%;
+//         padding: 20px;
+//     }
+
+//     .buttons {
+//         width: 15%;
+//         align-self: flex-end;
+//         padding: 20px;
+//     }
+// }

@@ -6,13 +6,12 @@ import CardOffer from './../CardOffer/CardOffer'
 
 class DashboardComponent extends Component {
 
-  offers = [{title: 'dddd', description: 'Lorem ipsum.', id: 1}, { id:3, title: 'Lorem ipsum dolor.', description: 'Lorem ipsum dolor sit amet.' }]
-
   componentDidMount() {
     this.props.getOffers()
   }
 
   render() {
+    const { offers } = this.props
     return (
       <div className='container' style={{minHeight: '90vh'}}>
         <div className='basic-container'>
@@ -20,8 +19,8 @@ class DashboardComponent extends Component {
           <PageHeader title='Dashboard' />
           </div>
 
-          <div className='card-container'>
-            {this.offers.map( offer => <CardOffer offer={offer} key={offer.id} />)}
+          <div className='card-offer-container'>
+            {offers.map( offer => <CardOffer offer={offer} key={offer.id} />)}
           </div>
         </div>
       </div>

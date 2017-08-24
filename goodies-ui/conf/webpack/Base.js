@@ -210,7 +210,9 @@ class WebpackBaseConfig {
           styles: `${this.srcPathAbsolute}/styles/`,
           api: `${this.srcPathAbsolute}/config/services/api.js`,
           core: `${this.srcPathAbsolute}/code/core`,
-          modules: `${this.srcPathAbsolute}/code/modules`
+          modules: `${this.srcPathAbsolute}/code/modules`,
+          donator: `${this.srcPathAbsolute}/code/modules/Donator`,
+          cause: `${this.srcPathAbsolute}/code/modules/Cause`
         },
         extensions: ['.js', '.jsx'],
         modules: [

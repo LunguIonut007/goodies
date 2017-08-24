@@ -2,29 +2,17 @@ import React, { Component } from 'react'
 import PageHeader from '../../../core/PageHeader/PageHeader'
 import CardCause from './../CardCause/CardCauseComponent'
 import AddModal from './../OfferAdd/OfferAddModal'
+import { connect } from 'react-redux'
+import CauseActions from 'modules/Cause/CauseRedux'
 
-export default class DashboardComponent extends Component {
-  causes = [
-    {
-      name: 'Onestin',
-      ups: 3045,
-      shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nemo quia pariatur, sapiente atque, ab quidem, aut enim quo expedita odio. Voluptate placeat adipisci molestias cupiditate perferendis sapiente id quod!',
-      avatar: 'http://lorempixel.com/400/800/'
-    },
-    {
-      name: 'Alt ong jmek',
-      ups: 2002,
-      shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nemo quia pariatur, sapiente atque, ab quidem, aut enim quo expedita odio. Voluptate placeat adipisci molestias cupiditate perferendis sapiente id quod!',
-      avatar: 'http://lorempixel.com/400/800/'
-    },
-    {
-      name: 'Alt ong jmek',
-      ups: 2002,
-      shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nemo quia pariatur, sapiente atque, ab quidem, aut enim quo expedita odio. Voluptate placeat adipisci molestias cupiditate perferendis sapiente id quod!',
-      avatar: 'http://lorempixel.com/400/800/'
-    }
-  ]
+class DashboardComponent extends Component {
+
+  componentDidMount() {
+    this.props.getCauses()
+  }
+
   render() {
+    const { causes } = this.props
     return (
       <div className='container'>
         <div>
@@ -32,8 +20,8 @@ export default class DashboardComponent extends Component {
           <AddModal/>
           <div className='card-container'>
             {
-              this.causes.map((cause, index) => 
-              <CardCause name={cause.name} shortDescription={cause.shortDescription} motto={cause.motto} src={cause.avatar} />)
+              causes.map(cause => 
+              <CardCause key={cause.id} name={cause.name} shortDescription={cause.address}src={'http://lorempixel.com/400/800'} />)
             }
           </div>
         </div>
@@ -42,3 +30,12 @@ export default class DashboardComponent extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({
+    causes: state.causes.list
+  }),
+  {
+    getCauses: CauseActions.getCausesRequest
+  }
+)(DashboardComponent)

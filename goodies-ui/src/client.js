@@ -11,6 +11,10 @@ import Layout from './code/modules/layout/Layout'
 import LoginPage from './code/modules/Login/LoginPage'
 import DashboardDonator from './code/modules/Donator/Dashboard/DashboardDonator'
 import DashboardCause from './code/modules/Cause/Dashboard/DashboardCause'
+import MyOffers from 'donator/MyOffers/MyOffersPage'
+import Requests from 'donator/Requests/RequestsPage'
+import MyProposals from 'cause/MyProposals/MyProposalsPage'
+import MyUsers from 'cause/MyUsers/MyUsersPage'
 import ReduxToastr from 'react-redux-toastr'
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n'
 require('./style/index.scss')
@@ -45,9 +49,13 @@ ReactDOM.render(
         <Route path='login' component={LoginPage} />
         <Route path='donator' component={Layout}>
           <Route path='dashboard' component={DashboardDonator} />
+          <Route path='myOffers' component={MyOffers}/>
+          <Route path='requests' component={Requests}/>
         </Route>
         <Route path='cause' component={Layout}>
           <Route path='dashboard' component={DashboardCause} />
+          <Route path='myProposals' component={MyProposals}/>
+          <Route path='myUsers' component={MyUsers}/>
         </Route>
       </Router>
      </div>

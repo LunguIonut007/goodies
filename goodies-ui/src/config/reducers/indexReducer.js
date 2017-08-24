@@ -10,9 +10,10 @@ const combined = combineReducers(
     form: formReducer,
     toastr: toastrReducer,
     i18n: i18nReducer,
-    login: require('./../../code/modules/Login/LoginRedux').reducer,
+    login: require('modules/Login/LoginRedux').reducer,
     register: require('modules/Login/RegisterRedux').reducer,
-    offers: require('modules/Offer/OfferRedux').reducer
+    offers: require('modules/Offer/OfferRedux').reducer,
+    causes: require('modules/Cause/CauseRedux').reducer
   }
 )
 

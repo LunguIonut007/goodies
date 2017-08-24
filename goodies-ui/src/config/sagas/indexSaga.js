@@ -9,6 +9,10 @@ import { RegisterTypes } from 'modules/Login/RegisterRedux'
 
 import { getOffers } from 'modules/Offer/OfferSagas'
 import { OfferTypes } from 'modules/Offer/OfferRedux'
+
+import { getCauses } from 'modules/Cause/CauseSagas'
+import { CauseTypes } from 'modules/Cause/CauseRedux'
+
 const api = API.create();
 
 export default function * mySaga () {
@@ -16,6 +20,7 @@ export default function * mySaga () {
     takeLatest(LoginTypes.LOGIN_REQUEST,login, api),
     takeLatest(LoginTypes.LOGOUT, logout, api),
     takeLatest(RegisterTypes.REGISTER_REQUEST, register, api),
-    takeLatest(OfferTypes.GET_OFFERS_REQUEST, getOffers, api)
+    takeLatest(OfferTypes.GET_OFFERS_REQUEST, getOffers, api),
+    takeLatest(CauseTypes.GET_CAUSES_REQUEST, getCauses, api)
   ])
 }
