@@ -48,6 +48,7 @@ class CauseAddModal extends Component {
                 fluid
                 size='small'
                 type='button'
+                positive
                 className='submit-button'
                 onClick={this.props.handleSubmit(this.onSubmit)}
                     >Submit

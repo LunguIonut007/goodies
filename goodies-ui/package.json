@@ -116,6 +116,7 @@
       "fetch",
       "navigator",
       "__DEV__",
+      "expect",
       "XMLHttpRequest",
       "FormData",
       "React$Element",

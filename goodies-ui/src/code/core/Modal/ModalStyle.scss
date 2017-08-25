@@ -2,3 +2,28 @@
     width: 60%;
     height: 60%;
 }
+
+.ui.modal>.header.donator {
+    background-color: $DLightBackground ;
+    color: #FFF;
+}
+
+.ui.modal>.content.donator {
+    background-color:$DNavigationSelected ;
+}
+
+.ui.modal>.header.cause {
+    background-color: $CLightBackground ;
+}
+
+.ui.modal>.content.cause {
+    background-color: $CNavigationSelected;
+}
+
+.ui.active.modal.donator {
+    background-color:$DNavigationSelected ;
+}
+
+.ui.active.modal.cause {
+    background-color:$CNavigationSelected ;
+}

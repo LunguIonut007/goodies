@@ -51,13 +51,15 @@ class Register extends Component {
           label={I18n.t('form.name')}
           placeholder='Nam3'
               />
-        <Field
-          name='password'
-          type='password'
-          component={CustomField}
-          label={I18n.t('form.password')}
-          placeholder='Not1234'
+        <div className='invisible'>
+          <Field
+            name='password'
+            type='password'
+            component={CustomField}
+            label={I18n.t('form.password')}
+            placeholder='Not1234'
               />
+        </div>
         <Field
           name='confirmPassword'
           type='password'

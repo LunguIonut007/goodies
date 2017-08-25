@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import { Modal } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
-export default class ModalComponent extends Component {
+class ModalComponent extends Component {
   componentWillMount () {
   }
 
   render () {
-    const { header, children, open, onClose } = this.props
+    const { header, children, open, onClose, entityType } = this.props
+
     return (
       <div>
-        <Modal open={open} onClose={onClose} className='own-modal-container'>
-          <Modal.Header>{header}</Modal.Header>
-          <Modal.Content>
+        <Modal open={open} onClose={onClose} className={`own-modal-container ${entityType}`}>
+          <Modal.Header className={entityType}>{header}</Modal.Header>
+          <Modal.Content className={entityType}>
             <Modal.Description>
               {children}
             </Modal.Description>
@@ -21,3 +23,5 @@ export default class ModalComponent extends Component {
     )
   }
 }
+
+export default connect(state => ({entityType: state.login.entityType}))(ModalComponent)
