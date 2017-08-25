@@ -57,7 +57,6 @@ export default class FooterComponent extends Component {
           </div>
         </ul>
         <div className='poweredBy'>
-          Powered By SaphireDEVils
         </div>
         <div className='language-switcher-container'>
           <LanguageSwitcher />

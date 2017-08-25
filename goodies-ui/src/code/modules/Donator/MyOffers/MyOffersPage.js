@@ -25,6 +25,10 @@ class Page extends Component {
 
     )
   }
+
+  componentWillUnmount () {
+    this.props.reset()
+  }
 }
 
 export default connect(
@@ -32,6 +36,7 @@ export default connect(
     offers: state.offers.list,
     entityType: state.login.entityType
   }), {
-    getOwnOffers: OfferActions.getOwnOffersRequest
+    getOwnOffers: OfferActions.getOwnOffersRequest,
+    reset: OfferActions.reset
   }
 )(Page)

@@ -6,6 +6,7 @@ import com.lungunaiman.donesti.Generic.Response;
 import com.lungunaiman.donesti.Offer.Offer;
 import com.lungunaiman.donesti.Offer.OfferService;
 import com.lungunaiman.donesti.Organization.Organization;
+import com.lungunaiman.donesti.Proposal.DTO.ProposalAcceptedDto;
 import com.lungunaiman.donesti.Proposal.DTO.ProposalCreateDto;
 import com.lungunaiman.donesti.Proposal.DTO.ProposalDto;
 import com.querydsl.core.BooleanBuilder;
@@ -36,7 +37,7 @@ public class ProposalService extends GenericService<Proposal> {
         Iterable<Proposal> list = proposalRepository.findAll(
                 new BooleanBuilder().and(QProposal.proposal.offer.user.id.eq(authUtils.getUser().getId()))
         );
-        System.out.println(authUtils.getUser().getId());
+
         List<ProposalDto> dtoList = new ArrayList<>();
         for(Proposal proposal : list) {
 
@@ -46,7 +47,21 @@ public class ProposalService extends GenericService<Proposal> {
         return new Response(dtoList);
     }
 
-    //public Response
+    public Response getAllAcceptedProposalsForOrg() {
+        QProposal qProposal = QProposal.proposal;
+        Organization organization = authUtils.getOrganization();
+        Iterable<Proposal> list = proposalRepository.findAll(
+                new BooleanBuilder(qProposal.organization.id.eq(organization.getId()))
+                    .and(qProposal.accepted.eq(true))
+        );
+
+        List<ProposalAcceptedDto> dtoList = new ArrayList<>();
+        for(Proposal proposal : list) {
+            dtoList.add(modelMapper.map(proposal, ProposalAcceptedDto.class));
+        }
+
+        return new Response(dtoList);
+    }
 
     public void deny(int id) {
         Proposal proposal = proposalRepository.findOne(id);

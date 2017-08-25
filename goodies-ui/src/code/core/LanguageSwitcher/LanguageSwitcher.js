@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setLocale } from 'react-router-redux'
+import { setLocale } from 'react-redux-i18n'
 import { DropdownButton, MenuItem } from 'react-bootstrap'
 
 class LanguageSwitcherComponent extends Component {
@@ -8,15 +8,15 @@ class LanguageSwitcherComponent extends Component {
     'en': 'English',
     'ro': 'Română'
   }
-  onClick = event => {
-    console.log('click')
+  onClick = (eventKey) => {
+    const { setLocale } = this.props
+    setLocale(eventKey)
   }
   render () {
-    // const { setLocale } = this.props
     return (
       <DropdownButton title='RO' className='language-switcher' id='language-switcher' dropup>
         {['ro', 'en'].map(locale =>
-          <MenuItem key={locale} eventKey={locale} onClick={this.onClick}>{this.localeKey[locale]}</MenuItem>)}
+          <MenuItem key={locale} eventKey={locale} onSelect={this.onClick}>{this.localeKey[locale]}</MenuItem>)}
       </DropdownButton>
     )
   }

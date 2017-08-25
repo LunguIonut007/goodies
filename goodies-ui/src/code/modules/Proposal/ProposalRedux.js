@@ -16,7 +16,13 @@ const { Types, Creators } = createActions({
 
   declineProposalRequest: ['proposalId'],
   declineProposalSuccess: [],
-  declineProposalError: ['error']
+  declineProposalError: ['error'],
+
+  getAcceptedProposalsRequest: [],
+  getAcceptedProposalsError: ['error'],
+  getAcceptedProposalsSuccess: ['data'],
+
+  reset: []
 })
 
 export const ProposalTypes = Types
@@ -44,5 +50,11 @@ export const reducer = createReducer(INITIAL_STATE, {
 
   DECLINE_PROPOSAL_REQUEST: state => state.merge({saving: true}),
   DECLINE_PROPOSAL_SUCCESS: state => state.merge({saving: false}),
-  DECLINE_PROPOSAL_ERROR: (state, {error}) => state.merge({saving: false, error})
+  DECLINE_PROPOSAL_ERROR: (state, {error}) => state.merge({saving: false, error}),
+
+  GET_ACCEPTED_PROPOSALS_REQUEST: state => state.merge({fetching: true}),
+  GET_ACCEPTED_PROPOSALS_SUCCESS: (state, { data }) => state.merge({fetching: false, list: data}),
+  GET_ACCEPTED_PROPOSALS_ERROR: (state, {error}) => state.merge({fetching: false, error}),
+
+  RESET: state => INITIAL_STATE
 })

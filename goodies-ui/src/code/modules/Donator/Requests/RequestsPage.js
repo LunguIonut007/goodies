@@ -24,6 +24,10 @@ class Page extends Component {
 
     )
   }
+
+  componentWillUnmount () {
+    this.props.reset()
+  }
 }
 
 export default connect(
@@ -31,6 +35,7 @@ export default connect(
     requests: state.proposals.list
   }),
   {
-    getRequests: ProposalActions.getProposalsDonorRequest
+    getRequests: ProposalActions.getProposalsDonorRequest,
+    reset: ProposalActions.reset
   }
 )(Page)

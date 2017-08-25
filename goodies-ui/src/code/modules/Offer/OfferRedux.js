@@ -12,7 +12,9 @@ const { Types, Creators } = createActions({
 
   saveOfferRequest: ['data'],
   saveOfferSuccess: [],
-  saveOfferError: ['error']
+  saveOfferError: ['error'],
+
+  reset: []
 })
 
 export const OfferTypes = Types
@@ -37,5 +39,7 @@ export const reducer = createReducer(INITIAL_STATE, {
 
   SAVE_OFFER_REQUEST: state => state.merge({fetching: true}),
   SAVE_OFFER_SUCCESS: state => state.merge({fetching: false}),
-  SAVE_OFFER_ERROR: (state, {error}) => state.merge({fetching: false, error})
+  SAVE_OFFER_ERROR: (state, {error}) => state.merge({fetching: false, error}),
+
+  reset: state => INITIAL_STATE
 })

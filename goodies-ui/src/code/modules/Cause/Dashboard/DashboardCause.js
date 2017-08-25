@@ -26,6 +26,10 @@ class DashboardComponent extends Component {
 
     )
   }
+
+  componentWillUnmount () {
+    this.props.reset()
+  }
 }
 
 export default connect(
@@ -34,6 +38,7 @@ export default connect(
     entityType: state.login.entityType
   }),
   {
-    getOffers: OfferActions.getOffersRequest
+    getOffers: OfferActions.getOffersRequest,
+    reset: OfferActions.reset
   }
 )(DashboardComponent)

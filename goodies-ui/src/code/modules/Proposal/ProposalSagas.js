@@ -14,7 +14,7 @@ export function * getProposalsDonor (api) {
 
 export function * saveProposal (api, {payload}) {
   const response = yield call(api.saveProposal, payload)
-  console.log(payload)
+
   if (response.status === 200) {
     yield put(ProposalActions.saveProposalSuccess())
     yield put(OfferActions.getOffersRequest())
@@ -41,5 +41,14 @@ export function * acceptProposal (api, { payload, proposalId }) {
     yield put(ProposalActions.getProposalsDonorRequest())
   } else {
     yield put(ProposalActions.declineProposalError('error'))
+  }
+}
+
+export function * getAcceptedProposals (api) {
+  const response = yield call(api.getAcceptedProposals)
+  if (response.status === 200) {
+    yield put(ProposalActions.getAcceptedProposalsSuccess(response.data.data))
+  } else {
+    yield put(ProposalActions.getAcceptedProposalsError('error'))
   }
 }

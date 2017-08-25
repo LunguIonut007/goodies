@@ -4,11 +4,6 @@ import classnames from 'classnames'
 import LogIn from './LoginComponents/LogInComponent'
 import Register from './LoginComponents/RegisterComponent'
 
-// TODO
-// simple validation for error design
-// i18n
-// validation kommio
-//
 export default class Template extends React.Component {
   componentWillMount () {
     this.setState({ entity: false })

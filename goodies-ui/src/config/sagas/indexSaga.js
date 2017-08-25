@@ -13,7 +13,13 @@ import { OfferTypes } from 'modules/Offer/OfferRedux'
 import { getCauses } from 'modules/Cause/CauseSagas'
 import { CauseTypes } from 'modules/Cause/CauseRedux'
 
-import { getProposalsDonor, acceptProposal, declineProposal, saveProposal } from 'modules/Proposal/ProposalSagas'
+import {
+  getProposalsDonor,
+  acceptProposal,
+  declineProposal,
+  saveProposal,
+  getAcceptedProposals
+} from 'modules/Proposal/ProposalSagas'
 import { ProposalTypes } from 'modules/Proposal/ProposalRedux'
 
 const api = API.create()
@@ -31,6 +37,7 @@ export default function * mySaga () {
     takeLatest(LoginTypes.GET_CURRENT_USER_REQUEST, getCurrentUser, api),
     takeLatest(ProposalTypes.ACCEPT_PROPOSAL_REQUEST, acceptProposal, api),
     takeLatest(ProposalTypes.DECLINE_PROPOSAL_REQUEST, declineProposal, api),
-    takeLatest(ProposalTypes.SAVE_PROPOSAL_REQUEST, saveProposal, api)
+    takeLatest(ProposalTypes.SAVE_PROPOSAL_REQUEST, saveProposal, api),
+    takeLatest(ProposalTypes.GET_ACCEPTED_PROPOSALS_REQUEST, getAcceptedProposals, api)
   ])
 }

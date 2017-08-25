@@ -37,7 +37,8 @@ const create = (baseURL = 'http://localhost:8080/') => {
     saveProposal: data => api.post('/proposal/create', data),
     getCurrentUser: () => api.get('/user'),
     declineProposal: proposalId => api.post(`/proposal/${proposalId}/deny`),
-    acceptProposal: (proposalId, payload) => api.post(`/proposal/${proposalId}/accept`, payload)
+    acceptProposal: (proposalId, payload) => api.post(`/proposal/${proposalId}/accept`, payload),
+    getAcceptedProposals: () => api.get('/proposal/getAccepted')
   }
 }
 
