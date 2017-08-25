@@ -3,7 +3,6 @@ import PageHeader from '../../../core/PageHeader/PageHeader'
 import { connect } from 'react-redux'
 import ProposalActions from 'modules/Proposal/ProposalRedux'
 import RequestCard from './RequestCard/RequestCard'
-
 class Page extends Component {
   componentDidMount () {
     this.props.getRequests()
@@ -17,7 +16,7 @@ class Page extends Component {
           <div style={{paddingBottom: 40}}>
             <PageHeader title='Requests from causes' />
           </div>
-          <div>
+          <div className='card-container-layout'>
             {requests.map(request => <RequestCard request={request} key={request.id} />)}
           </div>
         </div>

@@ -7,24 +7,16 @@ import CustomFieldLarge from 'core/CustomField/CustomFieldLarge'
 import { connect } from 'react-redux'
 
 class RequestAcceptModal extends Component {
-  componentWillMount () {
-    this.state = { open: false }
-  }
-
-  onClick = () => {
-    this.setState({open: !this.state.open})
-  }
-
   onSubmit = data => {
     this.props.saveOffer(data)
   }
 
   render () {
-    const { open } = this.state
+    const { open, onClick } = this.props
+
     return (
       <div>
-        <Button onClick={this.onClick}>Add </Button>
-        <Modal open={open} header={'Add offer'} onClose={this.onClick}>
+        <Modal open={open} header={'Add offer'} onClose={onClick}>
           <Form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <Field
               name='title'
@@ -49,7 +41,7 @@ class RequestAcceptModal extends Component {
                 onClick={this.props.handleSubmit(this.onSubmit)}
                     >Submit
                     </Button>
-              <Button fluid type='button' size='small' className='cancel-button' onClick={this.onClick}>Cancel</Button>
+              <Button fluid type='button' size='small' className='cancel-button' onClick={onClick}>Cancel</Button>
             </div>
           </Form>
         </Modal>

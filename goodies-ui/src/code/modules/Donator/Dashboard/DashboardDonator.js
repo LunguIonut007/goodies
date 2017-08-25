@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PageHeader from '../../../core/PageHeader/PageHeader'
-import CardCause from './../CardCause/CardCauseComponent'
+import CardCause from './../CardCause/CauseCard'
 import AddModal from './../OfferAdd/OfferAddModal'
 import { connect } from 'react-redux'
 import CauseActions from 'modules/Cause/CauseRedux'
@@ -17,10 +17,10 @@ class DashboardComponent extends Component {
         <div>
           <PageHeader title='Dashboard' />
           <AddModal />
-          <div className='card-container'>
+          <div className='card-container-layout'>
             {
               causes.map(cause =>
-                <CardCause key={cause.id} name={cause.name} shortDescription={cause.address}src={'http://react.semantic-ui.com/assets/images/avatar/large/matthew.png'} />)
+                <CardCause key={cause.id} cause={cause} />)
             }
           </div>
         </div>

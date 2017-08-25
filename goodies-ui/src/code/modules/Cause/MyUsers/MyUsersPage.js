@@ -28,7 +28,9 @@ class Page extends Component {
         <div className='basic-container'>
           <div style={{paddingBottom: 40}}>
             <PageHeader title='My users' />
-            {users.map(user => <UserCard key={user.id} user={user} />)}
+            <div className='card-container-layout'>
+              {users.map(user => <UserCard key={user.id} user={user} />)}
+            </div>
           </div>
         </div>
       </div>

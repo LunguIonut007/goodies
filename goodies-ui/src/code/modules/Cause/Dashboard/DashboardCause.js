@@ -10,7 +10,7 @@ class DashboardComponent extends Component {
   }
 
   render () {
-    const { offers } = this.props
+    const { offers, entityType } = this.props
     return (
       <div className='container' style={{minHeight: '90vh'}}>
         <div className='basic-container'>
@@ -18,8 +18,8 @@ class DashboardComponent extends Component {
             <PageHeader title='Dashboard' />
           </div>
 
-          <div className='card-offer-container'>
-            {offers.map(offer => <CardOffer offer={offer} key={offer.id} />)}
+          <div className='card-container-layout'>
+            {offers.map(offer => <CardOffer entityType={entityType} offer={offer} key={offer.id} />)}
           </div>
         </div>
       </div>
@@ -30,7 +30,8 @@ class DashboardComponent extends Component {
 
 export default connect(
   state => ({
-    offers: state.offers.list
+    offers: state.offers.list,
+    entityType: state.login.entityType
   }),
   {
     getOffers: OfferActions.getOffersRequest

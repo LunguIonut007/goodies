@@ -44,10 +44,9 @@ table {
 	border-spacing: 0;
 }
 
-.ui.card:first-child {
-	margin-top: auto;
-}
 
+
+// fix: toastr messeage not on center
 .redux-toastr {
 	.toastr {
 		display: flex;
@@ -56,9 +55,29 @@ table {
 	}
 }
 
+// semantic ui css rewrite
 .ui.card:last-child {
 	margin-bottom: auto;
 }	
+
+// semantic ui css rewrite
+.ui.card:first-child {
+	margin-top: auto;
+}
+
+
+.card-container-layout {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.card-margin {
+	margin: 10px;
+}
+
 @import './../../node_modules/react-redux-toastr/src/styles/index';
 @import 'variables.scss';
 @import 'layout.scss';
@@ -68,3 +87,4 @@ table {
 @import '../code/modules/Login/LoginStyle.scss';
 @import '../code/modules/Donator/CardCause/CardCauseStyle.scss';
 @import '../code/modules/Donator/Requests/RequestCard/RequestCardStyles.scss';
+@import '../code/modules/Cause/MyUsers/UserCardStyles.scss';

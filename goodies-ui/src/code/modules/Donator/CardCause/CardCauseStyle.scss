@@ -1,45 +1,4 @@
-.card-container-cause{
-    position:relative;
-    background: $DPrimaryBackground;
-    width:80%;
-    margin-bottom: 80px;
-    min-height:30vh;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
-    .upper {
-        display: flex;
-        padding: 30px;
-    }
-    .card-avatar{
-        margin-top:-100px;
-    }
-   .text{
-        padding: 10px;
-    .name{
-        font-size: 40px;
-        font-weight: bold;
-        padding-left: 20px;
-    }
-    .motto{
-        padding:20px;
-        padding-left: 40px;
-        font-size: 20px;
-        font-weight: 200;
-        font-style: italic;
-    }
-   } 
-   .description{
-       padding:10px;
-       padding-left: 15%;
-       padding-top: 0;
-       height: 40%;
-       overflow: hidden;
-       text-overflow: ellipsis;
-   }
-   .buttons{
-       align-self: flex-end;
-       padding: 5px;
-   }
+.ui.card.cause-card {
+    background-color: $DPrimaryCardColor;
+    box-shadow: 0 1px 3px 0 $DPrimaryCardColor, 0 0 0 1px $DPrimaryCardColor;
 }

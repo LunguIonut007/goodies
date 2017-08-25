@@ -6,9 +6,11 @@ export function * login (api, { username, password }) {
   const response = yield call(api.login, username, password)
 
   if (response.status === 200) {
-    yield put(LoginActions.loginSuccess(response.data))
-    const entityType = response.data.entityType.toLowerCase() === 'organization_admin' ? 'cause' : 'donator'
-    browserHistory.push(`${entityType}/dashboard`)
+    let data = response.data
+    data.entityType = data.entityType === 'DONOR' ? 'donator' : 'cause'
+    yield put(LoginActions.loginSuccess(data))
+    const route = response.data.entityType.toLowerCase() === 'organization_admin' ? 'cause' : 'donator'
+    browserHistory.push(`${route}/dashboard`)
   } else {
     yield put(LoginActions.loginFailure('login failed'))
   }
@@ -18,7 +20,9 @@ export function * getCurrentUser (api) {
   const response = yield call(api.getCurrentUser)
 
   if (response.status === 200) {
-    yield put(LoginActions.getCurrentUserSuccess(response.data.data))
+    let data = response.data.data
+    data.entityType = data.entityType === 'DONOR' ? 'donator' : 'cause'
+    yield put(LoginActions.getCurrentUserSuccess(data))
   } else {
     yield put(LoginActions.getCurrentUserFailure('login failed'))
   }
