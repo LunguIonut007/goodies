@@ -48,6 +48,14 @@ table {
 	margin-top: auto;
 }
 
+.redux-toastr {
+	.toastr {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 .ui.card:last-child {
 	margin-bottom: auto;
 }	
