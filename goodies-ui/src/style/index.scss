@@ -26,7 +26,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif !important;
+}
+div, h1, h2, h3, p, span {
+	font-family: 'Open Sans', sans-serif !important;
 }
 ol, ul {
 	list-style: none;

@@ -3,6 +3,7 @@ import Avatar from '../Avatar/AvatarComponent'
 import Menu from '../Menu/MenuComponent'
 import { connect } from 'react-redux'
 import LoginActions from 'modules/Login/LoginRedux'
+import { I18n } from 'react-redux-i18n'
 
 class SidebarComponent extends Component {
   componentDidMount () {
@@ -11,14 +12,14 @@ class SidebarComponent extends Component {
   }
 
   donorMenu = [
-    { name: 'Dashboard', path: '/donator/dashboard' },
-    { name: 'My Offers', path: '/donator/myOffers' },
-    {name: 'Requests', path: '/donator/requests'}]
+    { name: I18n.t(`menu.dashboard`), path: '/donator/dashboard' },
+    { name: I18n.t('menu.myOffers'), path: '/donator/myOffers' },
+    {name: I18n.t('menu.request'), path: '/donator/requests'}]
 
   causeMenu = [
-    { name: 'Dashboard', path: '/cause/dashboard' },
-    { name: 'My Proposals', path: '/cause/myProposals' },
-    {name: 'My Users', path: '/cause/myUsers'}]
+    { name: I18n.t(`menu.dashboard`), path: '/cause/dashboard' },
+    { name: I18n.t('menu.myProposals'), path: '/cause/myProposals' },
+    {name: I18n.t('menu.myUsers'), path: '/cause/myUsers'}]
 
   render () {
     const { entityType, email, activePath } = this.props

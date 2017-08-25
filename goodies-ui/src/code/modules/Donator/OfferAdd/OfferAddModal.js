@@ -6,6 +6,7 @@ import CustomField from 'core/CustomField/CustomField'
 import CustomFieldLarge from 'core/CustomField/CustomFieldLarge'
 import OfferActions from 'modules/Offer/OfferRedux'
 import { connect } from 'react-redux'
+import { I18n } from 'react-redux-i18n'
 
 class CauseAddModal extends Component {
   componentWillMount () {
@@ -25,22 +26,22 @@ class CauseAddModal extends Component {
     const { open } = this.state
     return (
       <div>
-        <Button onClick={this.onClick}>Add </Button>
-        <Modal open={open} header={'Add offer'} onClose={this.onClick}>
+        <Button onClick={this.onClick}>{I18n.t('buttons.add')}</Button>
+        <Modal open={open} header={I18n.t('headers.addOffer')} onClose={this.onClick}>
           <Form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <Field
               name='title'
               type='text'
               component={CustomField}
-              label='title'
-              placeholder='Title'
+              label={I18n.t('form.title')}
+              placeholder={I18n.t('form.title')}
                 />
             <Field
               name='description'
               type='text'
               component={CustomFieldLarge}
-              label='description'
-              placeholder='description'
+              label={I18n.t('form.description')}
+              placeholder={I18n.t('form.description')}
                 />
             <div className='action-buttons-container'>
               <Button
@@ -51,7 +52,7 @@ class CauseAddModal extends Component {
                 onClick={this.props.handleSubmit(this.onSubmit)}
                     >Submit
                     </Button>
-              <Button fluid type='button' size='small' className='cancel-button' onClick={this.onClick}>Cancel</Button>
+              <Button fluid type='button' size='small' className='cancel-button' onClick={this.onClick}>{I18n.t('buttons.cancel')}</Button>
             </div>
           </Form>
         </Modal>

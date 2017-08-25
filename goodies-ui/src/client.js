@@ -28,7 +28,9 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 syncTranslationWithStore(store)
 store.dispatch(loadTranslations(translationsObject))
-store.dispatch(setLocale('en'))
+let lang = localStorage.getItem('language')
+if (!lang) { lang = 'en'; localStorage.setItem('language', 'en') }
+store.dispatch(setLocale(lang))
 
 // TODO !! routes
 ReactDOM.render(

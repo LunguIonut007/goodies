@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PageHeader from '../../../core/PageHeader/PageHeader'
 import { connect } from 'react-redux'
 import UserCard from './UserCard'
+import { I18n } from 'react-redux-i18n'
 
 class Page extends Component {
   componentDidMount () {
@@ -27,7 +28,7 @@ class Page extends Component {
       <div className='container' style={{minHeight: '90vh'}}>
         <div className='basic-container'>
           <div style={{paddingBottom: 40}}>
-            <PageHeader title='My users' />
+            <PageHeader title={I18n.t('headers.myUsers')} />
             <div className='card-container-layout'>
               {users.map(user => <UserCard key={user.id} user={user} />)}
             </div>

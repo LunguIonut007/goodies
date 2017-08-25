@@ -3,6 +3,7 @@ import PageHeader from '../../../core/PageHeader/PageHeader'
 import { connect } from 'react-redux'
 import ProposalActions from 'modules/Proposal/ProposalRedux'
 import MyProposalCard from './MyProposalCard'
+import { I18n } from 'react-redux-i18n'
 
 class Page extends Component {
   componentDidMount () {
@@ -16,7 +17,7 @@ class Page extends Component {
       <div className='container' style={{minHeight: '90vh'}}>
         <div className='basic-container'>
           <div style={{paddingBottom: 40}}>
-            <PageHeader title='My accepted proposals' />
+            <PageHeader title={I18n.t('headers.myProposals')} />
             <div className='card-container-layout' >
               {proposals.map(proposal => <MyProposalCard key={proposal.id} proposal={proposal} />)}
             </div>

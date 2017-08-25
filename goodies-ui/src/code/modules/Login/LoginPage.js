@@ -3,6 +3,7 @@ import { Tab, Nav, NavItem } from 'react-bootstrap'
 import classnames from 'classnames'
 import LogIn from './LoginComponents/LogInComponent'
 import Register from './LoginComponents/RegisterComponent'
+import { I18n } from 'react-redux-i18n'
 
 export default class Template extends React.Component {
   componentWillMount () {
@@ -20,8 +21,8 @@ export default class Template extends React.Component {
               <div className={classnames('signInLogInPanel', { 'signInLogInPanel-in': this.state.entity })}>
                 <h1>
                   <div className='div'>
-                    <div className='donator'>Donator</div>
-                    <div className='cause'>Cause</div>
+                    <div className='donator'>{I18n.t('donor')}</div>
+                    <div className='cause'>{I18n.t('cause')}</div>
                   </div>
                 </h1>
                 <div className={classnames('formContainer')}>
@@ -33,7 +34,7 @@ export default class Template extends React.Component {
                             Log In
                           </NavItem>
                           <NavItem eventKey={2}>
-                            Register
+                            {I18n.t('register')}
                           </NavItem>
                         </Nav>
                       </div>
@@ -49,13 +50,13 @@ export default class Template extends React.Component {
                   </Tab.Container>
                 </div>
                 <div onClick={() => this.animate()} className='donorToCause'>
-                  <div className='changeButton'>Click Here</div>
+                  <div className='changeButton'>Click</div>
                 </div>
                 <div onClick={() => this.animate()} className='causeToDonor'>
-                  <div className='changeButton'>Click Here</div>
+                  <div className='changeButton'>Click</div>
                 </div>
                 <div className='messageCause'>
-                  {this.state.entity ? 'Do you want to help somebody?' : 'Do you want some help?'}
+                  {this.state.entity ? I18n.t('login.questionCause') : I18n.t('login.questionDonor')}
                 </div>
               </div>
             </div>
@@ -63,14 +64,14 @@ export default class Template extends React.Component {
           </div>
           <div className='hero-donor'>
             <div className='hero-donor-container'>
-              <h1>Goodiees <br />We only have what we give.</h1>
-              <p>Some words about how good you are and how helping others is amazing Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, eum est ad vel reprehenderit, at quod, rerum molestias ducimus asperiores, earum facilis nobis? Corporis ex illo eveniet omnis, libero fugiat!</p>
+              <h1>Goodiees <br />{I18n.t('login.causeMotto')}</h1>
+              <p>{I18n.t('login.causeDesc')}</p>
             </div>
           </div>
           <div className='hero-cause'>
             <div className='hero-cause-container'>
-              <h1>Goodiees <br />No one has ever become poor by giving.</h1>
-              <p>Some words about how good you are and how helping others is amazing Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, eum est ad vel reprehenderit, at quod, rerum molestias ducimus asperiores, earum facilis nobis? Corporis ex illo eveniet omnis, libero fugiat!</p>
+              <h1>Goodiees <br />{I18n.t('login.donorMotto')}</h1>
+              <p>{I18n.t('login.donorDesc')}</p>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import {Field, reduxForm} from 'redux-form'
 import CustomFieldLarge from 'core/CustomField/CustomFieldLarge'
 import { connect } from 'react-redux'
 import ProposalActions from 'modules/Proposal/ProposalRedux'
+import { I18n } from 'react-redux-i18n'
 
 class RequestAcceptModal extends Component {
   onSubmit = payload => {
@@ -18,14 +19,14 @@ class RequestAcceptModal extends Component {
 
     return (
       <div>
-        <Modal open={open} header={'Accept proposal'} onClose={onClick}>
+        <Modal open={open} header={I18n.t('headers.acceptProposal')} onClose={onClick}>
           <Form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <Field
               name='message'
               type='text'
               component={CustomFieldLarge}
-              label='Message'
-              placeholder='Message for the cause'
+              label={I18n.t('form.message')}
+              placeholder={I18n.t('form.messagePlaceholder')}
                 />
             <div className='action-buttons-container'>
               <Button
@@ -36,7 +37,7 @@ class RequestAcceptModal extends Component {
                 onClick={this.props.handleSubmit(this.onSubmit)}
                     >Submit
                     </Button>
-              <Button fluid type='button' size='small' className='cancel-button' onClick={onClick}>Cancel</Button>
+              <Button fluid type='button' size='small' className='cancel-button' onClick={onClick}>{I18n.t('buttons.cancel')}</Button>
             </div>
           </Form>
         </Modal>

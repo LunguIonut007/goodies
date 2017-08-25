@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import CustomField from 'core/CustomField/CustomField'
 import LoginActions from './../LoginRedux'
 // import {toastr} from 'react-redux-toastr'
-// import { I18n } from 'react-redux-i18n'
+import { I18n } from 'react-redux-i18n'
 
 const validate = values => {
   const errors = {}
@@ -33,7 +33,7 @@ class LogIn extends Component {
           name='password'
           type='password'
           component={CustomField}
-          label='Password'
+          label={I18n.t('form.password')}
           placeholder='Not1234'
         />
         <Button

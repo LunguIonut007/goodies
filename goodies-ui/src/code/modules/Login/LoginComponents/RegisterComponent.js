@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import CustomField from '../../../core/CustomField/CustomField'
 import RegisterActions from './../RegisterRedux'
+import { I18n } from 'react-redux-i18n'
 
 const validate = values => {
   const errors = {}
@@ -47,21 +48,21 @@ class Register extends Component {
           name='name'
           type='text'
           component={CustomField}
-          label='Name'
+          label={I18n.t('form.name')}
           placeholder='Nam3'
               />
         <Field
           name='password'
           type='password'
           component={CustomField}
-          label='Password'
+          label={I18n.t('form.password')}
           placeholder='Not1234'
               />
         <Field
           name='confirmPassword'
           type='password'
           component={CustomField}
-          label='Confirm Password'
+          label={I18n.t('form.confirmPassword')}
           placeholder='StillNot1234'
               />
         <Button fluid type='button' onClick={this.props.handleSubmit(this.onSubmit)} className='submitContainerButton'>Register</Button>

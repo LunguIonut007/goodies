@@ -1,3 +1,52 @@
 {
-    "name": "Ionut"
+    "cause": "Cauză",
+    "donor": "Donator",
+    "register": "Înregistreză",
+    "login": {
+        "questionCause": "Ai nevoie de o mână de ajutor?",
+        "questionDonor": "Vrei să ajuți?",
+        "donorMotto": "Nimeni nu a devenit sărac oferind.",
+        "causeMotto": "Avem doar ceea ce dăm.",
+        "donorDesc": "În ziua de azi, a valorilor fluide, o mână întinsă clădește un viitor mai sigur pentru toți. Consideri că un lucru nu-ți mai e de folos? Pune-l în trebuință donând-ul.",
+        "causeDesc": "E momentul sa fii mai încrezător în aproapele tau. Înscrie-te și pune în folosință ce alții nu mai au nevoie."
+    },
+    "form": {
+        "password": "Parolă",
+        "search": "Caută...",
+        "title": "Titlu",
+        "description": "Descriere",
+        "message": "Mesaj",
+        "messagePlaceholder": "Mesaj pentru cauză",
+        "name": "Nume",
+        "confirmPassword": "Confirmă parola"
+    },
+    "menu": {
+        "dashboard": "Dashboard",
+        "myProposals": "Cererile mele",
+        "myUsers": "Voluntari",
+        "myOffers": "Donațiile mele",
+        "requests": "Cereri"
+    },
+    "headers": {
+        "myProposals": "Cereri acceptate",
+        "myUsers": "Voluntari",
+        "myOffers": "Donațiile mele",
+        "requests": "Requests from causes",
+        "addOffer": "Adaugă donație",
+        "acceptProposal": "Accepta cererea"
+    },
+    "buttons": {
+        "add": "Adaugă",
+        "cancel": "Anulează",
+        "approve": "Aprobă",
+        "decline": "Refuză",
+        "accepted": "Acceptat",
+        "declined": "Refuzat",
+        "pending": "În așteptare",
+        "request": "Cere"
+    },
+    "requestCard": {
+        "requestFrom":"Cerere de la:",
+        "offerTitle": "Cauza a cerut oferta cu titlul:"
+    }
 }

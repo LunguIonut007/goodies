@@ -357,7 +357,7 @@
                         transform: translate(-90px);
 
                         color: #fff;
-                        font-size: 30px;
+                        font-size: 26px;
                         align-self: flex-center;
                         margin-top: auto;
                         text-align: center;
@@ -365,7 +365,7 @@
                         padding-right: 20px;
                         padding-left: 110px;
                         font-family: 'Josefin Slab', serif;
-                        font-weight: 800;
+                        font-weight: 400;
                     }
                     // style of the translated state
                     &-in {
@@ -434,7 +434,7 @@
                             transform: translate(40px);
 
                             padding-left: 110px;
-                            padding-right: 30px;
+                            padding-right: 60px;
                         }
                     }
                 }

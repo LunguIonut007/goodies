@@ -1,3 +1,52 @@
 {
-    "name": "Jon"
+    "cause": "Cause",
+    "donor": "Donor",
+    "register": "Register",
+    "login": {
+        "questionCause": "Do you want some help?",
+        "questionDonor": "Do you want to help somebody?",
+        "donorMotto": "No one has ever become poor by giving.",
+        "causeMotto": "We only have what we give.",
+        "donorDesc": "Today, in a world of fluid values, open arms is what we need to build a brighter future. Do you think you have something you have no use for anymore? Offer it.",
+        "causeDesc": "It's time to trust those around you. Register and put to good use what others do not need anymore."
+    },
+    "form": {
+        "password": "Password",
+        "search": "Search...",
+        "title": "Title",
+        "description": "Description",
+        "message": "Message",
+        "messagePlaceholder": "Message for the cause",
+        "name": "Name",
+        "confirmPassword": "Confirm Password"
+    },
+    "menu": {
+        "dashboard": "Dashboard",
+        "myProposals": "My Proposals",
+        "myUsers": "My Users",
+        "myOffers": "My Offers",
+        "requests": "Requests"
+    },
+    "headers": {
+        "myProposals": "My accepted proposals",
+        "myUsers": "My users",
+        "myOffers": "My offers",
+        "requests": "Requests from causes",
+        "addOffer": "Add offer",
+        "acceptProposal": "Accept proposal"
+    },
+    "buttons": {
+        "add": "Add",
+        "cancel": "Cancel",
+        "approve": "Approve",
+        "decline": "Decline",
+        "accepted": "Accepted",
+        "declined": "Declined",
+        "pending": "Pending ...",
+        "request": "Request"
+    },
+    "requestCard": {
+        "requestFrom":"Request from:",
+        "offerTitle": "The cause has requested the offer with the title:"
+    }
 }

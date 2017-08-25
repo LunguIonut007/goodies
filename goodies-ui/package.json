@@ -119,7 +119,8 @@
       "XMLHttpRequest",
       "FormData",
       "React$Element",
-      "expect"
+      "localStorage",
+      "location"
     ]
   }
 }
