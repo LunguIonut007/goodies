@@ -1,6 +1,5 @@
 package com.lungunaiman.donesti.Proposal;
 
-import com.lungunaiman.donesti.Donor.Donor;
 import com.lungunaiman.donesti.Generic.GenericEntity;
 import com.lungunaiman.donesti.Offer.Offer;
 import com.lungunaiman.donesti.Organization.Organization;
@@ -20,14 +19,12 @@ public class Proposal extends GenericEntity {
     private Organization organization;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DONOR_ID")
-    private Donor donor;
-
-    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "OFFER_ID")
     private Offer offer;
 
-    private boolean pending;
+    private boolean pending = true;
 
     private boolean accepted;
+
+    private String message = "";
 }

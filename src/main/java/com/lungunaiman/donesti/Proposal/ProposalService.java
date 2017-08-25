@@ -3,10 +3,15 @@ package com.lungunaiman.donesti.Proposal;
 import com.lungunaiman.donesti.Generic.GenericRepository;
 import com.lungunaiman.donesti.Generic.GenericService;
 import com.lungunaiman.donesti.Generic.Response;
+import com.lungunaiman.donesti.Offer.Offer;
+import com.lungunaiman.donesti.Offer.OfferService;
+import com.lungunaiman.donesti.Organization.Organization;
+import com.lungunaiman.donesti.Proposal.DTO.ProposalCreateDto;
 import com.lungunaiman.donesti.Proposal.DTO.ProposalDto;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +20,7 @@ import java.util.List;
 public class ProposalService extends GenericService<Proposal> {
 
     @Autowired private ProposalRepository proposalRepository;
+    @Autowired private OfferService offerService;
 
     @Override
     public GenericRepository<Proposal> getRepository() {
@@ -28,15 +34,73 @@ public class ProposalService extends GenericService<Proposal> {
 
     public Response getAllOwn() {
         Iterable<Proposal> list = proposalRepository.findAll(
-                new BooleanBuilder().and(QProposal.proposal.donor.user.id.eq(authUtils.getUser().getId()))
+                new BooleanBuilder().and(QProposal.proposal.offer.user.id.eq(authUtils.getUser().getId()))
         );
         System.out.println(authUtils.getUser().getId());
         List<ProposalDto> dtoList = new ArrayList<>();
         for(Proposal proposal : list) {
-            System.out.println("!");
+
             dtoList.add(modelMapper.map(proposal, ProposalDto.class));
         }
 
         return new Response(dtoList);
+    }
+
+    //public Response
+
+    public void deny(int id) {
+        Proposal proposal = proposalRepository.findOne(id);
+
+        if(!proposal.isPending()) return; //throw error
+
+        proposal.setAccepted(false);
+        proposal.setPending(false);
+        proposalRepository.save(proposal);
+    }
+
+    public void accept(int id,String message) {
+        Proposal proposal = proposalRepository.findOne(id);
+        Iterable<Proposal> list = proposalRepository.findAll(
+                new BooleanBuilder(QProposal.proposal.offer.id.eq(proposal.getOffer().getId()))
+        );
+        if(!proposal.isPending()) return; //throw error
+
+        for(Proposal proposal1 : list) {
+            proposal1.setPending(false);
+            proposal1.setAccepted(false);
+            proposalRepository.save(proposal1);
+        }
+
+        proposal.setAccepted(true);
+        proposal.setPending(false);
+        proposal.setMessage(message);
+        proposal.getOffer().setSent(true);
+        proposalRepository.save(proposal);
+    }
+
+    public Response create(ProposalCreateDto entity) {
+        Organization organization = authUtils.getOrganization();
+        Proposal testProposal = proposalRepository.findOne(
+                new BooleanBuilder(QProposal.proposal.offer.id.eq(entity.getOfferId()))
+                .and(QProposal.proposal.organization.id.eq(organization.getId()))
+        );
+
+        if(testProposal != null) return Response.getErrorResponse();
+
+        Offer offer = offerService.getRepository().findOne(entity.getOfferId());
+
+        if(offer.isSent()) return Response.getErrorResponse();
+
+        Proposal proposal = new Proposal();
+        proposal.setOffer(offer);
+        proposal.setOrganization(organization);
+        proposalRepository.save(proposal);
+        return new Response(modelMapper.map(proposal, ProposalDto.class));
+    }
+
+    @Override
+    public Object create(Proposal entity) {
+        // to prevent workaround of business logic
+        throw new NotImplementedException();
     }
 }

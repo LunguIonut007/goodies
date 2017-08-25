@@ -12,4 +12,27 @@
         </sql>
     </changeSet>
 
+    <changeSet id="5-b" author="adrian.lungu">
+        <sql>
+            ALTER TABLE `donesti`.`proposal`
+            ADD COLUMN `MESSAGE` TEXT NOT NULL AFTER `OFFER_ID`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="5-c" author="adrian.lungu">
+        <sql>
+            ALTER TABLE `donesti`.`offer`
+            ADD COLUMN `SENT` INT(2) NOT NULL DEFAULT 0 AFTER `USER_ID`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="5-d" author="adrian.lungu">
+        <sql>
+            ALTER TABLE `donesti`.`proposal`
+            DROP COLUMN `DONOR_ID`;
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
+
+

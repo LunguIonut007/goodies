@@ -37,6 +37,4 @@ public class OfferController extends GenericController<Offer> {
     public Response getAllOwn() {
         return new Response(offerService.getOwn());
     }
-
-   // @GetMapping("/get")
 }

@@ -6,9 +6,17 @@ const { Types, Creators } = createActions({
   getProposalsDonorSuccess: ['data'],
   getProposalsDonorError: ['error'],
 
-  saveProposalRequest: ['data'],
+  saveProposalRequest: ['payload'],
   saveProposalSuccess: [],
-  savePRoposalError: ['error']
+  savePRoposalError: ['error'],
+
+  acceptProposalRequest: ['proposalId', 'payload'],
+  acceptProposalSuccess: [],
+  acceptProposalError: ['error'],
+
+  declineProposalRequest: ['proposalId'],
+  declineProposalSuccess: [],
+  declineProposalError: ['error']
 })
 
 export const ProposalTypes = Types
@@ -26,7 +34,15 @@ export const reducer = createReducer(INITIAL_STATE, {
   GET_PROPOSALS_DONOR_SUCCESS: (state, { data }) => state.merge({fetching: false, list: data}),
   GET_PROPOSALS_DONOR_ERROR: (state, {error}) => state.merge({fetching: false, error}),
 
-  SAVE_PROPOSAL_REQUEST: state => state.merge({fetching: true}),
-  SAVE_PROPOSAL_SUCCESS: state => state.merge({fetching: false}),
-  SAVE_PROPOSAL_ERROR: (state, {error}) => state.merge({fetching: false, error})
+  SAVE_PROPOSAL_REQUEST: state => state.merge({saving: true}),
+  SAVE_PROPOSAL_SUCCESS: state => state.merge({saving: false}),
+  SAVE_PROPOSAL_ERROR: (state, {error}) => state.merge({saving: false, error}),
+
+  ACCEPT_PROPOSAL_REQUEST: state => state.merge({saving: true}),
+  ACCEPT_PROPOSAL_SUCCESS: state => state.merge({saving: false}),
+  ACCEPT_PROPOSAL_ERROR: (state, {error}) => state.merge({saving: false, error}),
+
+  DECLINE_PROPOSAL_REQUEST: state => state.merge({saving: true}),
+  DECLINE_PROPOSAL_SUCCESS: state => state.merge({saving: false}),
+  DECLINE_PROPOSAL_ERROR: (state, {error}) => state.merge({saving: false, error})
 })

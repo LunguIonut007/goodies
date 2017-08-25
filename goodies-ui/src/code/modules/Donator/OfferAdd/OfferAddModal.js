@@ -18,6 +18,7 @@ class CauseAddModal extends Component {
 
   onSubmit = data => {
     this.props.saveOffer(data)
+    this.onClick()
   }
 
   render () {

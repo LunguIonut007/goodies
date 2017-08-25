@@ -19,4 +19,6 @@ public class Offer extends GenericEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    private boolean sent;
 }

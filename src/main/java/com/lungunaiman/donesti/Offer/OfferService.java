@@ -4,6 +4,8 @@ import com.lungunaiman.donesti.Generic.GenericRepository;
 import com.lungunaiman.donesti.Generic.GenericService;
 import com.lungunaiman.donesti.Generic.Response;
 import com.lungunaiman.donesti.Offer.DTO.OfferDto;
+import com.lungunaiman.donesti.Organization.DTO.OfferOrganizationDto;
+import com.lungunaiman.donesti.Organization.DTO.ProposalOrganizationDto;
 import com.lungunaiman.donesti.Organization.Organization;
 import com.lungunaiman.donesti.Organization.OrganizationService;
 import com.lungunaiman.donesti.Organization.QOrganization;
@@ -65,17 +67,19 @@ public class OfferService extends GenericService<Offer> {
         );
 
         List<Offer> list = this.getRepository().findAll();
-        List<OfferDto> dtoList = new ArrayList<>();
-        OfferDto offerDto;
+        List<OfferOrganizationDto> dtoList = new ArrayList<>();
+        OfferOrganizationDto offerDto;
         Proposal proposal;
-        System.out.println(organization.getId());
+
         for(Offer offer : list) {
             booleanBuilder = new BooleanBuilder()
                     .and(qProposal.organization.id.eq(organization.getId()))
                     .and(qProposal.offer.id.eq(offer.getId()));
             proposal = proposalService.getRepository().findOne(booleanBuilder);
-            offerDto = this.modelMapper.map(offer, OfferDto.class);
+            offerDto = this.modelMapper.map(offer, OfferOrganizationDto.class);
             offerDto.setRequested(proposal != null);
+            if(proposal != null)
+                offerDto.setProposal(this.modelMapper.map(proposal, ProposalOrganizationDto.class));
             dtoList.add(offerDto);
         }
         return new Response(dtoList);

@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Button, Form } from 'semantic-ui-react'
 import Modal from 'core/Modal/ModalComponent'
 import {Field, reduxForm} from 'redux-form'
-import CustomField from 'core/CustomField/CustomField'
 import CustomFieldLarge from 'core/CustomField/CustomFieldLarge'
 import { connect } from 'react-redux'
+import ProposalActions from 'modules/Proposal/ProposalRedux'
 
 class RequestAcceptModal extends Component {
-  onSubmit = data => {
-    this.props.saveOffer(data)
+  onSubmit = payload => {
+    const { acceptRequest, request, onClick } = this.props
+    acceptRequest(request.id, payload)
+    onClick()
   }
 
   render () {
@@ -16,21 +18,14 @@ class RequestAcceptModal extends Component {
 
     return (
       <div>
-        <Modal open={open} header={'Add offer'} onClose={onClick}>
+        <Modal open={open} header={'Accept proposal'} onClose={onClick}>
           <Form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <Field
-              name='title'
-              type='text'
-              component={CustomField}
-              label='title'
-              placeholder='Title'
-                />
-            <Field
-              name='description'
+              name='message'
               type='text'
               component={CustomFieldLarge}
-              label='description'
-              placeholder='description'
+              label='Message'
+              placeholder='Message for the cause'
                 />
             <div className='action-buttons-container'>
               <Button
@@ -59,5 +54,5 @@ export default connect(
     state => ({
 
     }), {
-    }
-)(reduxForm({ form: 'requestAcceptModal', validate })(RequestAcceptModal))
+      acceptRequest: ProposalActions.acceptProposalRequest
+    })(reduxForm({ form: 'requestAcceptModal', validate })(RequestAcceptModal))

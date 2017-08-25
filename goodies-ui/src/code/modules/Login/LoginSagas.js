@@ -9,8 +9,7 @@ export function * login (api, { username, password }) {
     let data = response.data
     data.entityType = data.entityType === 'DONOR' ? 'donator' : 'cause'
     yield put(LoginActions.loginSuccess(data))
-    const route = response.data.entityType.toLowerCase() === 'organization_admin' ? 'cause' : 'donator'
-    browserHistory.push(`${route}/dashboard`)
+    browserHistory.push(`${data.entityType}/dashboard`)
   } else {
     yield put(LoginActions.loginFailure('login failed'))
   }
@@ -24,7 +23,7 @@ export function * getCurrentUser (api) {
     data.entityType = data.entityType === 'DONOR' ? 'donator' : 'cause'
     yield put(LoginActions.getCurrentUserSuccess(data))
   } else {
-    yield put(LoginActions.getCurrentUserFailure('login failed'))
+    yield put(LoginActions.getCurrentUserError('login failed'))
   }
 }
 
