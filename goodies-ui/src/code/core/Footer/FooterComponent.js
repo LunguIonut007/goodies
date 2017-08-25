@@ -56,8 +56,7 @@ export default class FooterComponent extends Component {
             </li>
           </div>
         </ul>
-        <div className='poweredBy'>
-        </div>
+        <div className='poweredBy' />
         <div className='language-switcher-container'>
           <LanguageSwitcher />
         </div>

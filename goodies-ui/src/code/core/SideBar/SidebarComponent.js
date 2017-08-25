@@ -21,21 +21,25 @@ class SidebarComponent extends Component {
     {name: 'My Users', path: '/cause/myUsers'}]
 
   render () {
-    const { entityType, email } = this.props
+    const { entityType, email, activePath } = this.props
     return (
       <div className='sidebar' data-entityType={entityType}>
         <Avatar src='https://react.semantic-ui.com/assets/images/avatar/large/rachel.png' entityType={entityType} side='25vh' />
         <div className='user-name'>
           {email}
         </div>
-        <Menu menuItems={entityType === 'cause' ? this.causeMenu : this.donorMenu} pathname='dashboard' entityType={entityType} />
+        <Menu
+          menuItems={entityType === 'cause' ? this.causeMenu : this.donorMenu}
+          pathname={activePath}
+          entityType={entityType} />
       </div>
     )
   }
 }
 
 export default connect(state => ({
-  email: state.login.email
+  email: state.login.email,
+  activePath: state.routing.locationBeforeTransitions.pathname
 }), {
   getUser: LoginActions.getCurrentUserRequest
 })(SidebarComponent)

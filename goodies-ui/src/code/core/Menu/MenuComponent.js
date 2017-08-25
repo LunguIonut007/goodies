@@ -4,7 +4,8 @@ import { browserHistory } from 'react-router'
 
 export default class MenuComponent extends Component {
   componentWillMount () {
-    this.state = { activeItem: 'Dashboard' }
+    const item = this.props.menuItems.filter(menuItem => this.props.pathname === menuItem.path)[0]
+    this.state = { activeItem: item.name }
   }
 
   handleItemClick = (e, { name }) => {
