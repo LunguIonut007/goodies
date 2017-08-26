@@ -16,6 +16,8 @@ public class Organization extends GenericEntity {
     @Column(name = "admin_name")
     private String adminName;
 
+    private String description;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;

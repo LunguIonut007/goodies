@@ -11,4 +11,5 @@ public class OrganizationDto {
     private String phone;
     private String adminName;
     private UserDto user;
+    private String description;
 }

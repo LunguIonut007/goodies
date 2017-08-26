@@ -33,6 +33,14 @@
         </sql>
     </changeSet>
 
+    <changeSet id="5-e" author="adrian.lungu">
+        <sql>
+            ALTER TABLE `donesti`.`organization`
+            ADD COLUMN `description` TEXT NULL AFTER `user_id`;
+
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
 
 

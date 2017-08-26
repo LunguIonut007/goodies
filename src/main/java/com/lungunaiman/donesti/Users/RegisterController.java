@@ -32,6 +32,7 @@ public class RegisterController {
         }
 
         if(register.getOrganization() != null) {
+            System.out.println("here org");
             register.getOrganization().setUser(user);
             register.getUser().setEntityType(EntityType.ORGANIZATION_ADMIN);
             return new Response(organizationRepository.save(register.getOrganization()));

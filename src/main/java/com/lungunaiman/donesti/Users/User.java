@@ -1,6 +1,5 @@
 package com.lungunaiman.donesti.Users;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,7 +16,6 @@ public class User {
 
     private String name;
 
-    @JsonIgnore
     private String password;
     private String email;
 

@@ -10,4 +10,5 @@ public class OfferDto {
     private Integer id;
     private String title;
     private String description;
+    private Boolean sent;
 }

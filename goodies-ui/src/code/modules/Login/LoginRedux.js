@@ -11,7 +11,7 @@ const { Types, Creators } = createActions({
 
   getCurrentUserRequest: [],
   getCurrentUserSuccess: ['payload'],
-  getCurrentUSerError: ['error']
+  getCurrentUserError: ['error']
 })
 
 export const LoginTypes = Types

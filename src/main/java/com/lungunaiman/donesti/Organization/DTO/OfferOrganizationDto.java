@@ -10,5 +10,6 @@ public class OfferOrganizationDto {
     private String title;
     private String description;
     private Boolean requested;
+    private Boolean sent;
     private ProposalOrganizationDto proposal;
 }

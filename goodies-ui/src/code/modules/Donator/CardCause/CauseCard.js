@@ -9,8 +9,13 @@ const CauseCard = ({cause}) => (
         <Card.Header>
           {cause.user.name}
         </Card.Header>
+        <Card.Meta>
+          <span className='date'>
+            {cause.address}
+          </span>
+      </Card.Meta>
         <Card.Description>
-          {cause.address}
+          {cause.description}
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
