@@ -2,11 +2,7 @@
 import apisauce from 'apisauce'
 
 // our "constructor"
-const create = (baseURL = 'https://api.github.com/') => {
-  // ------
-  // STEP 1
-  // ------
-  //
+const create = (baseURL = 'http://192.168.0.104:8080') => {
   // Create and configure an apisauce-based api object.
   //
   const api = apisauce.create({
@@ -17,44 +13,23 @@ const create = (baseURL = 'https://api.github.com/') => {
       'Cache-Control': 'no-cache'
     },
     // 10 second timeout...
-    timeout: 10000
+    timeout: 1000
   })
-
-  // ------
-  // STEP 2
-  // ------
-  //
-  // Define some functions that call the api.  The goal is to provide
-  // a thin wrapper of the api layer providing nicer feeling functions
-  // rather than "get", "post" and friends.
-  //
-  // I generally don't like wrapping the output at this level because
-  // sometimes specific actions need to be take on `403` or `401`, etc.
-  //
-  // Since we can't hide from that, we embrace it by getting out of the
-  // way at this level.
-  //
-  const getRoot = () => api.get('')
-  const getRate = () => api.get('rate_limit')
-  const getUser = (username) => api.get('search/users', {q: username})
-
-  // ------
-  // STEP 3
-  // ------
-  //
-  // Return back a collection of functions that we would consider our
-  // interface.  Most of the time it'll be just the list of all the
-  // methods in step 2.
-  //
-  // Notice we're not returning back the `api` created in step 1?  That's
-  // because it is scoped privately.  This is one way to create truly
-  // private scoped goodies in JavaScript.
-  //
   return {
     // a list of the API functions from step 2
-    getRoot,
-    getRate,
-    getUser
+    login: (username, password) => api.post(`/api_login?username=${username}&password=${password}`),
+    logout: () => api.get('/logout'),
+    register: data => api.post('/register', data),
+    getOffers: () => api.get('/offer'),
+    getCauses: () => api.get('/cause'),
+    getOwnOffers: () => api.get('/offer/getOwn'),
+    saveOffer: data => api.post('/offer', data),
+    getProposalsDonor: () => api.get('/proposal/getOwn'),
+    saveProposal: data => api.post('/proposal/create', data),
+    getCurrentUser: () => api.get('/user'),
+    declineProposal: proposalId => api.post(`/proposal/${proposalId}/deny`),
+    acceptProposal: (proposalId, payload) => api.post(`/proposal/${proposalId}/accept`, payload),
+    getAcceptedProposals: () => api.get('/proposal/getAccepted')
   }
 }
 

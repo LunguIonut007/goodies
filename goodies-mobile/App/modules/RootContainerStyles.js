@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native'
-
+import { Colors } from './../Themes/'
 export default StyleSheet.create({
   applicationView: {
     width: '100%',
@@ -12,6 +12,6 @@ export default StyleSheet.create({
   header: {
     height: '15%',
     width: '100%',
-    backgroundColor: 'blue'
+    backgroundColor: Colors.PrimaryCardColor
   }
 })

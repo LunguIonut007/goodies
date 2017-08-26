@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
+import { View, StatusBar, Text } from 'react-native'
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 import { connect } from 'react-redux'
 import StartupActions from '../Redux/StartupRedux'
@@ -16,15 +16,32 @@ class RootContainer extends Component {
     }
   }
 
+  LeftComponent = props =>
+    <View style={{justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{color: 'red'}}>left</Text>
+    </View>
+
+  CenterComponent = props =>
+    <View>
+      <Text>center</Text>
+    </View>
+
+  RightComponent = props =>
+    <View>
+      <Text>left</Text>
+    </View>
+
   render () {
+    const { LeftComponent, RightComponent, CenterComponent } = this
     return (
       <View style={styles.applicationView}>
         <StatusBar barStyle='light-content' translucent backgroundColor='transparent' />
         <Header
+          innerContainerStyles={{ alignItems: 'center', justifyContent: 'space-between' }}
           style={styles.header}
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
+          leftComponent={<LeftComponent />}
+          centerComponent={<CenterComponent />}
+          rightComponent={<RightComponent />}
         />
         <View style={styles.container}>
           <ReduxNavigation />

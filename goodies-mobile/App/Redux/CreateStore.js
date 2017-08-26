@@ -5,7 +5,8 @@ import createSagaMiddleware from 'redux-saga'
 import RehydrationServices from '../Services/RehydrationServices'
 import ReduxPersist from '../Config/ReduxPersist'
 import ScreenTracking from './ScreenTrackingMiddleware'
-
+import { createLogger } from 'redux-logger'
+import R from 'ramda'
 // creates the store
 export default (rootReducer, rootSaga) => {
   /* ------------- Redux Configuration ------------- */
@@ -21,6 +22,17 @@ export default (rootReducer, rootSaga) => {
   const sagaMonitor = Config.useReactotron ? console.tron.createSagaMonitor() : null
   const sagaMiddleware = createSagaMiddleware({ sagaMonitor })
   middleware.push(sagaMiddleware)
+
+  const SAGA_LOGGING_BLACKLIST = ['EFFECT_TRIGGERED', 'EFFECT_RESOLVED','@@redux-form/SET_SUBMIT_SUCCEEDED', 'EFFECT_REJECTED', 'persist/REHYDRATE', '@@redux-form/BLUR', '@@redux-form/CHANGE', '@@redux-form/TOUCH', '@@redux-form/REGISTER_FIELD', '@@redux-form/FOCUS']
+
+  if (__DEV__) {
+    const USE_LOGGING = Config.reduxLogging
+        // the predicate silences the saga based messages
+    const logger = createLogger({
+      predicate: (getState, { type }) => USE_LOGGING && R.not(R.contains(type, SAGA_LOGGING_BLACKLIST))
+    })
+    middleware.push(logger)
+  }
 
   /* ------------- Assemble Middleware ------------- */
 
