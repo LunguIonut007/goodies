@@ -40,6 +40,40 @@
 
         </sql>
     </changeSet>
+    <changeSet id="5-f" author="adrian.lungu">
+        <sql>
+            ALTER TABLE `donesti`.`donor`
+            ADD COLUMN `LATITUDE` DECIMAL NULL,
+            ADD COLUMN `LONGITUDE` DECIMAL NULL AFTER `LATITUDE`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="5-g" author="adrian.lungu">
+        <sql>
+            ALTER TABLE `donesti`.`organization`
+            ADD COLUMN `LATITUDE` DECIMAL NULL,
+            ADD COLUMN `LONGITUDE` DECIMAL NULL AFTER `LATITUDE`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="5-h" author="adrian.lungu">
+        <sql>
+
+            ALTER TABLE `donesti`.`donor`
+            CHANGE COLUMN `LATITUDE` `LATITUDE` DECIMAL(10,6) NULL DEFAULT NULL ,
+            CHANGE COLUMN `LONGITUDE` `LONGITUDE` DECIMAL(10,6) NULL DEFAULT NULL ;
+        </sql>
+    </changeSet>
+
+    <changeSet id="5-i" author="adrian.lungu">
+        <sql>
+
+            ALTER TABLE `donesti`.`organization`
+            CHANGE COLUMN `LATITUDE` `LATITUDE` DECIMAL(10,6) NULL DEFAULT NULL ,
+            CHANGE COLUMN `LONGITUDE` `LONGITUDE` DECIMAL(10,6) NULL DEFAULT NULL ;
+        </sql>
+    </changeSet>
+
 
 </databaseChangeLog>
 

@@ -3,7 +3,6 @@ import LoginActions from './../Redux/LoginRedux'
 import { NavigationActions } from 'react-navigation'
 
 export const login = function * login (api, { username, password }) {
-  console.log('111')
   const response = yield call(api.login, username, password)
   console.log(response)
   if (response.status === 200) {

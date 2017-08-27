@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @Service
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
@@ -27,6 +28,8 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         ModelMapper modelMapper = new ModelMapper();
         httpServletResponse.setStatus(200);
         httpServletResponse.setHeader("Content-Type","application/json;charset=UTF-8");
-        httpServletResponse.getOutputStream().println(objectMapper.writeValueAsString(modelMapper.map(authUtils.getUser(), UserBigDto.class)));
+        httpServletResponse.setCharacterEncoding("UTF-8");
+        PrintWriter out = httpServletResponse.getWriter();
+        out.println(objectMapper.writeValueAsString(modelMapper.map(authUtils.getUser(), UserBigDto.class)));
     }
 }

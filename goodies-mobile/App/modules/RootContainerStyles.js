@@ -4,7 +4,7 @@ export default StyleSheet.create({
   applicationView: {
     width: '100%',
     height: '100%',
-    backgroundColor: Colors.LightBackground
+    backgroundColor: Colors.mint
   },
   container: {
     width: '100%',
@@ -16,6 +16,6 @@ export default StyleSheet.create({
     left: 0,
     top: 0,
     position: 'absolute',
-    backgroundColor: Colors.PrimaryCardColor
+    backgroundColor: Colors.mint
   }
 })

@@ -11,7 +11,7 @@ class LoginScreen extends Component {
   onSubmit = data => {
     console.log(this.props.login)
     // this.props.login(data.email, data.password)
-    this.props.login('cause@cause.cause', 'password')
+    this.props.login('copii@cauza.com', 'password')
   }
 
   render () {

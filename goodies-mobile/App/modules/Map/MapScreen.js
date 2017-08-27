@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { connect } from 'react-redux'
 import { MapView, Location, Permissions } from 'expo'
-export default class MapScreen extends Component {
+
+class MapScreen extends Component {
   componentWillMount () {
     this.state = {
       region: {
@@ -14,6 +15,22 @@ export default class MapScreen extends Component {
     }
 
     this.getLocationAsync()
+    this.setMarkers(this.props.offers)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.offers !== this.props.offers) {
+      this.setMarkers(nextProps.offers)
+    }
+  }
+
+  setMarkers = (offers) => {
+    this.setState({ markers: offers.map(
+      offer => ({
+        coords: { latitude: offer.latitude, longitude: offer.longitude },
+        title: offer.offer.title
+      })
+  )})
   }
 
   getLocationAsync = async () => {
@@ -23,6 +40,7 @@ export default class MapScreen extends Component {
       this.setState({error: 'No permission'})
     } else {
       let location = await Location.getCurrentPositionAsync({})
+      console.log('get')
       this.setState({
         region: {...this.state.region, latitude: location.coords.latitude, longitude: location.coords.longitude}
         // markers: [...this.state.markers, {coords: location.coords, title: 'Me'}]
@@ -53,3 +71,8 @@ export default class MapScreen extends Component {
     )
   }
 }
+
+export default connect(state => ({
+  offers: state.proposal.list
+}), {
+})(MapScreen)

@@ -20,13 +20,14 @@ class CauseAddModal extends Component {
   onSubmit = data => {
     this.props.saveOffer(data)
     this.onClick()
+    this.props.destroy('causeAdd')
   }
 
   render () {
     const { open } = this.state
     return (
       <div>
-        <Button onClick={this.onClick}>{I18n.t('buttons.add')}</Button>
+        <Button onClick={this.onClick}>{I18n.t('buttons.addOffer')}</Button>
         <Modal open={open} header={I18n.t('headers.addOffer')} onClose={this.onClick}>
           <Form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <Field

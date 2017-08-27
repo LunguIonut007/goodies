@@ -21,10 +21,10 @@ const PrimaryNav = StackNavigator({
     initialRouteName: 'Offers',
     tabBarPosition: 'bottom',
     tabBarOptions: {
-      activeTintColor: '#fff',
+      activeTintColor: '#000',
       inactiveTintColor: '#b5b5b5',
       style: {
-        backgroundColor: Colors.PrimaryCardColor
+        backgroundColor: Colors.dandelion
       }
     }
   })}
@@ -32,7 +32,7 @@ const PrimaryNav = StackNavigator({
   navigationOptions: {
     headerStyle: styles.header,
     title: 'Goodies',
-    headerTitleStyle: { color: '#FFF', alignSelf: 'center' },
+    headerTitleStyle: { color: '#000', fontSize: 20, alignSelf: 'center' },
     headerRight: <View />,
     headerLeft: <View />
   },

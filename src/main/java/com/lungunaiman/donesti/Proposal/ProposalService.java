@@ -1,5 +1,8 @@
 package com.lungunaiman.donesti.Proposal;
 
+import com.lungunaiman.donesti.Donor.Donor;
+import com.lungunaiman.donesti.Donor.DonorRepository;
+import com.lungunaiman.donesti.Donor.QDonor;
 import com.lungunaiman.donesti.Generic.GenericRepository;
 import com.lungunaiman.donesti.Generic.GenericService;
 import com.lungunaiman.donesti.Generic.Response;
@@ -22,6 +25,7 @@ public class ProposalService extends GenericService<Proposal> {
 
     @Autowired private ProposalRepository proposalRepository;
     @Autowired private OfferService offerService;
+    @Autowired private DonorRepository donorRepository;
 
     @Override
     public GenericRepository<Proposal> getRepository() {
@@ -56,12 +60,31 @@ public class ProposalService extends GenericService<Proposal> {
         );
 
         List<ProposalAcceptedDto> dtoList = new ArrayList<>();
+        ProposalAcceptedDto proposalDto;
+        Donor donor;
         for(Proposal proposal : list) {
-            dtoList.add(modelMapper.map(proposal, ProposalAcceptedDto.class));
+            proposalDto = modelMapper.map(proposal, ProposalAcceptedDto.class);
+            donor = donorRepository.findOne(
+                    new BooleanBuilder(QDonor.donor.user.id.eq(proposal.getOffer().getUser().getId()))
+            );
+            proposalDto.setLatitude(donor.getLatitude());
+            proposalDto.setLongitude(donor.getLongitude());
+            dtoList.add(proposalDto);
         }
 
         return new Response(dtoList);
     }
+
+//    public Response getUsersForChat() {
+//        QProposal qProposal = QProposal.proposal;
+//        Organization organization = authUtils.getOrganization();
+//        Iterable<Proposal> list = proposalRepository.findAll(
+//                new BooleanBuilder(qProposal.organization.id.eq(organization.getId()))
+//                        .and(qProposal.accepted.eq(true))
+//        );
+//
+//
+//    }
 
     public void deny(int id) {
         Proposal proposal = proposalRepository.findOne(id);

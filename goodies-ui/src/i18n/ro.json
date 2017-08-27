@@ -31,12 +31,13 @@
         "myProposals": "Cereri acceptate",
         "myUsers": "Voluntari",
         "myOffers": "Donațiile mele",
-        "requests": "Requests from causes",
+        "requests": "Cereri de la cauze",
         "addOffer": "Adaugă donație",
         "acceptProposal": "Accepta cererea"
     },
     "buttons": {
         "add": "Adaugă",
+        "addOffer": "Adaugă donație",
         "cancel": "Anulează",
         "approve": "Aprobă",
         "decline": "Refuză",

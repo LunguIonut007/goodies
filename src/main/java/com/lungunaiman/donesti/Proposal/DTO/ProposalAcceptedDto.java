@@ -9,4 +9,7 @@ public class ProposalAcceptedDto {
     private int id;
     private OfferDto offer;
     private String message;
+    private Double latitude;
+    private Double longitude;
+
 }

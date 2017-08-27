@@ -6,7 +6,16 @@ const colors = {
   DarkBackground: '#1d1d10',
   LightBackground: '#DAA520', // #cccc00;
   NavigationSelected: '#fec60d',
-  PrimaryCardColor: '#e6cd2e'
+  PrimaryCardColor: '#e6cd2e',
+
+  OrangeYellow: '#FFD166',
+  beige: '#F8FCDA',
+  minionYellow: '#F4E04D',
+  dandelion: '#F4DE35',
+  lemonYellow: '#FFFF4F',
+  mint: '#F4FFFD',
+  sunglow: '#FFC038',
+  light: '#FACC6B'
 }
 
 export default colors

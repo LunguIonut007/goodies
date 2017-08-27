@@ -12,6 +12,7 @@ class RequestAcceptModal extends Component {
     const { acceptRequest, request, onClick } = this.props
     acceptRequest(request.id, payload)
     onClick()
+    this.props.destroy('causeAdd')
   }
 
   render () {

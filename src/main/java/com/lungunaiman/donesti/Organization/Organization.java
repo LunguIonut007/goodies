@@ -11,6 +11,8 @@ import javax.persistence.*;
 public class Organization extends GenericEntity {
 
     private String address;
+    private Double latitude;
+    private Double longitude;
     private String phone;
 
     @Column(name = "admin_name")

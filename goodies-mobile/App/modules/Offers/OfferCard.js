@@ -7,7 +7,9 @@ class OfferScreen extends Component {
     const { offer } = this.props
     return (
       <View style={styles.cardContainer}>
-        <Text>dsadsa</Text>
+        <Text>{offer.offer.title}</Text>
+        <Text>{offer.offer.description}</Text>
+        <Text>{offer.message}</Text>
       </View>
     )
   }

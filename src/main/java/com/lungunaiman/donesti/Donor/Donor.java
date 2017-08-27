@@ -16,6 +16,9 @@ public class Donor extends GenericEntity {
     private String address;
     private String phone;
 
+    private Double latitude;
+    private Double longitude;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;

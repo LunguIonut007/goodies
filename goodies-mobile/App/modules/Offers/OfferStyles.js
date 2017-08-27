@@ -5,8 +5,8 @@ export default StyleSheet.create({
   cardContainer: {
     margin: 10,
     width: '95%',
-    height: 80,
+    minHeight: 80,
     elevation: 1,
-    backgroundColor: Colors.LightBackground
+    backgroundColor: '#FFF'
   }
 })

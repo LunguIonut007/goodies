@@ -11,11 +11,11 @@ const UserCard = ({user}) => (
         </Card.Header>
         <Card.Meta>
           <span className='date'>
-          Joined in 2015
+          Voluntar
         </span>
         </Card.Meta>
         <Card.Description>
-        Matthew is a musician living in Nashville.
+        Dornici să ajutăm.
       </Card.Description>
       </Card.Content>
       <Card.Content extra>

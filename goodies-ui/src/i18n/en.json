@@ -37,6 +37,7 @@
     },
     "buttons": {
         "add": "Add",
+        "addOffer": "Add offer",
         "cancel": "Cancel",
         "approve": "Approve",
         "decline": "Decline",
