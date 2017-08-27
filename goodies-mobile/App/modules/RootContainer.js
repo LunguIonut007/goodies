@@ -4,7 +4,7 @@ import ReduxNavigation from '../Navigation/ReduxNavigation'
 import { connect } from 'react-redux'
 import StartupActions from '../Redux/StartupRedux'
 import ReduxPersist from '../Config/ReduxPersist'
-import { Header } from 'react-native-elements'
+// import { Header } from 'react-native-elements'
 // Styles
 import styles from './RootContainerStyles'
 
@@ -22,7 +22,7 @@ class RootContainer extends Component {
     </View>
 
   render () {
-    const { CenterComponent } = this
+    // const { CenterComponent } = this
     return (
       <View style={styles.applicationView}>
         <StatusBar barStyle='light-content' translucent backgroundColor='transparent' />

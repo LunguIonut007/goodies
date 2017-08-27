@@ -3,7 +3,6 @@ import { View, FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import ProposalActions from './../../Redux/ProposalRedux'
 import OfferCard from './OfferCard'
-import { Colors } from './../../Themes/'
 
 class OfferScreen extends Component {
   componentDidMount () {

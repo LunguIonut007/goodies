@@ -28,3 +28,5 @@ goodies-ui/node_modules
 goodies-mobile/node_modules
 goodies-mobile/.vscode
 goodies-mobile/.expo
+
+goodies-mobile/App/Config/privateKeys.js

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { MapView, Location, Permissions } from 'expo'
+import privateKeys from './../../Config/privateKeys'
 
 class MapScreen extends Component {
   componentWillMount () {
+    Location.setApiKey(privateKeys.googleMaps)
     this.state = {
       region: {
         latitude: 37.78825,
@@ -28,7 +30,7 @@ class MapScreen extends Component {
     this.setState({ markers: offers.map(
       offer => ({
         coords: { latitude: offer.latitude, longitude: offer.longitude },
-        title: offer.offer.title
+        title: offer.user.name
       })
   )})
   }
@@ -58,7 +60,9 @@ class MapScreen extends Component {
       <MapView
         style={{ flex: 1 }}
         region={region}
+        initialRegion={region}
         onRegionChange={this.onRegionChange}
+        showsMyLocationButton
         showsUserLocation>
         {markers.map((marker, index) => (
           <MapView.Marker
