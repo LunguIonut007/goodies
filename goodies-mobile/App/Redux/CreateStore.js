@@ -23,7 +23,7 @@ export default (rootReducer, rootSaga) => {
   const sagaMiddleware = createSagaMiddleware({ sagaMonitor })
   middleware.push(sagaMiddleware)
 
-  const SAGA_LOGGING_BLACKLIST = ['EFFECT_TRIGGERED', 'EFFECT_RESOLVED','@@redux-form/SET_SUBMIT_SUCCEEDED', 'EFFECT_REJECTED', 'persist/REHYDRATE', '@@redux-form/BLUR', '@@redux-form/CHANGE', '@@redux-form/TOUCH', '@@redux-form/REGISTER_FIELD', '@@redux-form/FOCUS']
+  const SAGA_LOGGING_BLACKLIST = ['EFFECT_TRIGGERED', 'EFFECT_RESOLVED', '@@redux-form/SET_SUBMIT_SUCCEEDED', 'EFFECT_REJECTED', 'persist/REHYDRATE', '@@redux-form/BLUR', '@@redux-form/CHANGE', '@@redux-form/TOUCH', '@@redux-form/REGISTER_FIELD', '@@redux-form/FOCUS']
 
   if (__DEV__) {
     const USE_LOGGING = Config.reduxLogging

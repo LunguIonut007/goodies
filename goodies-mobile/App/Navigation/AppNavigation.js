@@ -1,4 +1,6 @@
 import { TabNavigator, StackNavigator } from 'react-navigation'
+import React from 'react'
+import { View } from 'react-native'
 import LoginScreen from '../modules/Login/LoginScreen'
 import OffersScreen from '../modules/Offers/OfferScreen'
 import MapScreen from '../modules/Map/MapScreen'
@@ -16,11 +18,7 @@ const PrimaryNav = StackNavigator({
     Map: { screen: MapScreen }
   }, {
       // Default config for all screens
-    headerMode: 'none',
     initialRouteName: 'Offers',
-    navigationOptions: {
-      headerStyle: styles.header
-    },
     tabBarPosition: 'bottom',
     tabBarOptions: {
       activeTintColor: '#fff',
@@ -31,7 +29,13 @@ const PrimaryNav = StackNavigator({
     }
   })}
 }, {
-  headerMode: 'none',
+  navigationOptions: {
+    headerStyle: styles.header,
+    title: 'Goodies',
+    headerTitleStyle: { color: '#FFF', alignSelf: 'center' },
+    headerRight: <View />,
+    headerLeft: <View />
+  },
   initialRouteName: 'Login'
 })
 export default PrimaryNav

@@ -16,33 +16,21 @@ class RootContainer extends Component {
     }
   }
 
-  LeftComponent = props =>
-    <View style={{justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={{color: 'red'}}>left</Text>
-    </View>
-
   CenterComponent = props =>
     <View>
-      <Text>center</Text>
-    </View>
-
-  RightComponent = props =>
-    <View>
-      <Text>left</Text>
+      <Text style={{fontSize: 30, color: '#fff'}}>Goodies</Text>
     </View>
 
   render () {
-    const { LeftComponent, RightComponent, CenterComponent } = this
+    const { CenterComponent } = this
     return (
       <View style={styles.applicationView}>
         <StatusBar barStyle='light-content' translucent backgroundColor='transparent' />
-        <Header
+        {/* <Header
           innerContainerStyles={{ alignItems: 'center', justifyContent: 'space-between' }}
           style={styles.header}
-          leftComponent={<LeftComponent />}
           centerComponent={<CenterComponent />}
-          rightComponent={<RightComponent />}
-        />
+        /> */}
         <View style={styles.container}>
           <ReduxNavigation />
         </View>

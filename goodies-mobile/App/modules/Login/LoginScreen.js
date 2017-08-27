@@ -1,17 +1,11 @@
 import React, { Component } from 'react'
-import { reduxForm } from 'redux-form'
+import { reduxForm, Field } from 'redux-form'
+import { View } from 'react-native'
 import { connect } from 'react-redux'
-import {
-    ActionsContainer,
-    Button,
-    FieldsContainer,
-    Fieldset,
-    Form
-  } from 'react-native-clean-form'
-import {
-    Input
-  } from 'react-native-clean-form/redux-form'
+import TextInput from './../../core/Form/TextInput'
 import LoginActions from './../../Redux/LoginRedux'
+import {Button} from 'react-native-elements'
+import styles from './LoginStyles'
 
 class LoginScreen extends Component {
   onSubmit = data => {
@@ -23,17 +17,13 @@ class LoginScreen extends Component {
   render () {
     const { handleSubmit } = this.props
     return (
-      <Form>
-        <FieldsContainer>
-          <Fieldset label='Contact details'>
-            <Input name='email' label='Email' placeholder='something@domain.com' />
-            <Input name='password' label='Password' placeholder='Password' />
-          </Fieldset>
-        </FieldsContainer>
-        <ActionsContainer>
-          <Button icon='md-checkmark' iconPlacement='right' onPress={handleSubmit(this.onSubmit)}>Login</Button>
-        </ActionsContainer>
-      </Form>
+      <View style={styles.view}>
+        <View style={styles.container}>
+          <Field name='email' label={'Email'} component={TextInput} />
+          <Field name='password' label={'Password'} component={TextInput} />
+          <Button onPress={handleSubmit(this.onSubmit)} title='Login' />
+        </View>
+      </View>
     )
   }
 }
