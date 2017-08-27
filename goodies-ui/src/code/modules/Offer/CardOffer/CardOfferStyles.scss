@@ -1,7 +1,6 @@
 .ui.card.card-offer-cause {
     background-color: $CPrimaryCardColor;
     box-shadow: 0 1px 3px 0 $CPrimaryCardColor, 0 0 0 1px $CPrimaryCardColor;
-
     .text {
         word-wrap: break-word;
     }
@@ -11,7 +10,6 @@
 .ui.card.card-offer-donator {
     background-color: $DPrimaryCardColor;
     box-shadow: 0 1px 3px 0 $DPrimaryCardColor, 0 0 0 1px $DPrimaryCardColor;
-
     .text {
         word-wrap: break-word;
     }
