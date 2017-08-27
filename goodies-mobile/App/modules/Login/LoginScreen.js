@@ -20,8 +20,8 @@ class LoginScreen extends Component {
       <View style={styles.view}>
         <View style={styles.container}>
           <Field name='email' label={'Email'} component={TextInput} />
-          <Field name='password' label={'Password'} component={TextInput} />
-          <Button onPress={handleSubmit(this.onSubmit)} title='Login' />
+          <Field name='password' label={'Parolă'} component={TextInput} />
+          <Button containerViewStyle={styles.buttonContainer} buttonStyle={styles.button} onPress={handleSubmit(this.onSubmit)} title='Loghează-te' />
         </View>
       </View>
     )

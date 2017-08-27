@@ -8,5 +8,19 @@ export default StyleSheet.create({
     minHeight: 80,
     elevation: 1,
     backgroundColor: '#FFF'
+  },
+  padding: {
+    padding: 20
+  },
+  title: {
+    fontSize: 20
+  },
+  description: {
+    color: 'gray',
+    paddingTop: 10,
+    paddingBottom: 5
+  },
+  message: {
+    color: 'grey'
   }
 })

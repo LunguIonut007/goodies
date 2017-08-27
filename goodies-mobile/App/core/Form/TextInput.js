@@ -6,9 +6,10 @@ export default class MyTextInput extends React.Component {
   render () {
     const { input, label, ...inputProps } = this.props
     return (
-      <View>
-        <FormLabel>{label}</FormLabel>
+      <View style={{paddingVertical: 10}}>
+        <FormLabel labelStyle={{color: '#000'}}>{label}</FormLabel>
         <FormInput
+          underlineColorAndroid='orange'
           {...inputProps}
           onChangeText={value => input.onChange(value)}
           onBlur={input.onBlur}

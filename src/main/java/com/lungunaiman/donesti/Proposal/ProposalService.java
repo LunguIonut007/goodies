@@ -12,6 +12,7 @@ import com.lungunaiman.donesti.Organization.Organization;
 import com.lungunaiman.donesti.Proposal.DTO.ProposalAcceptedDto;
 import com.lungunaiman.donesti.Proposal.DTO.ProposalCreateDto;
 import com.lungunaiman.donesti.Proposal.DTO.ProposalDto;
+import com.lungunaiman.donesti.Proposal.DTO.UserSmallProposalDto;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,6 +70,7 @@ public class ProposalService extends GenericService<Proposal> {
             );
             proposalDto.setLatitude(donor.getLatitude());
             proposalDto.setLongitude(donor.getLongitude());
+            proposalDto.setUser(modelMapper.map(proposal.getOffer().getUser(), UserSmallProposalDto.class));
             dtoList.add(proposalDto);
         }
 

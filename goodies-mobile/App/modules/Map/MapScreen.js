@@ -40,7 +40,6 @@ class MapScreen extends Component {
       this.setState({error: 'No permission'})
     } else {
       let location = await Location.getCurrentPositionAsync({})
-      console.log('get')
       this.setState({
         region: {...this.state.region, latitude: location.coords.latitude, longitude: location.coords.longitude}
         // markers: [...this.state.markers, {coords: location.coords, title: 'Me'}]
@@ -54,6 +53,7 @@ class MapScreen extends Component {
 
   render () {
     const { region, markers } = this.state
+    console.log('region', region)
     return (
       <MapView
         style={{ flex: 1 }}

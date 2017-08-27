@@ -11,5 +11,6 @@ public class ProposalAcceptedDto {
     private String message;
     private Double latitude;
     private Double longitude;
+    private UserSmallProposalDto user;
 
 }

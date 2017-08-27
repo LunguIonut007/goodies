@@ -13,16 +13,16 @@ import { Colors } from './../Themes/'
 const PrimaryNav = StackNavigator({
   Login: { screen: LoginScreen },
   Tab: { screen: TabNavigator({
-    Offers: { screen: OffersScreen },
+    Oferte: { screen: OffersScreen },
     Chat: { screen: ChatScreen },
-    Map: { screen: MapScreen }
+    Harta: { screen: MapScreen }
   }, {
       // Default config for all screens
-    initialRouteName: 'Offers',
+    initialRouteName: 'Oferte',
     tabBarPosition: 'bottom',
     tabBarOptions: {
       activeTintColor: '#000',
-      inactiveTintColor: '#b5b5b5',
+      inactiveTintColor: '#383838',
       style: {
         backgroundColor: Colors.dandelion
       }
