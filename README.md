@@ -1,7 +1,7 @@
 # Goodies
 Goodies. Un site unde poți ajuta din conforul casei tale.
 
-Proiectul este întreținut pe un repository privat, dându-se push periodic pe github.
+Proiect realizat de mine si @alexnaiman.
 
 Goodies este alcatuit din 3 parți: un backend(făcut în java spring), frontend facut în react(cu redux, sagas) și o aplicație de mobile făcută în react-native (cu expo, redux și sagas).
 
